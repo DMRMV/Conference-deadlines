@@ -2,8 +2,8 @@ name: Update Conference Deadlines
 
 on:
   schedule:
-    # 8:00 AM Japan time = 11:00 PM UTC on the previous day
-    - cron: "0 23 * * *"
+    # Every Monday at 8:00 AM Japan time = 11:00 PM UTC on the previous day
+    - cron: "0 23 * * 0"
 
   # Lets us test the automation manually
   workflow_dispatch:
