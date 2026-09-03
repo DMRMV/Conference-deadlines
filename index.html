@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Environmental Analysis Conference Tracker</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        background: #f5f7fa;
+        color: #1f2937;
+    }
+
+    .container {
+        max-width: 1500px;
+        margin: 0 auto;
+        padding: 40px 25px;
+    }
+
+    h1 {
+        margin-bottom: 8px;
+        font-size: 32px;
+    }
+
+    .subtitle {
+        color: #667085;
+        margin-bottom: 8px;
+    }
+
+    .updated {
+        color: #667085;
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+
+    .legend {
+        margin-bottom: 20px;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .badge {
+        padding: 6px 10px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .open {
+        background: #dcfce7;
+        color: #166534;
+    }
+
+    .imminent {
+        background: #fef3c7;
+        color: #92400e;
+    }
+
+    .new {
+        background: #dbeafe;
+        color: #1e40af;
+    }
+
+    .watch {
+        background: #e5e7eb;
+        color: #374151;
+    }
+
+    .closed {
+        background: #fee2e2;
+        color: #991b1b;
+    }
+
+    .table-wrapper {
+        overflow-x: auto;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 1300px;
+    }
+
+    th {
+        background: #111827;
+        color: white;
+        padding: 14px;
+        text-align: left;
+        font-size: 13px;
+        position: sticky;
+        top: 0;
+    }
+
+    td {
+        padding: 14px;
+        border-bottom: 1px solid #e5e7eb;
+        vertical-align: top;
+        font-size: 14px;
+    }
+
+    tr:hover {
+        background: #f9fafb;
+    }
+
+    a {
+        color: #2563eb;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .deadline {
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+    .status {
+        font-weight: 600;
+    }
+
+    footer {
+        margin-top: 25px;
+        color: #667085;
+        font-size: 13px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Environmental Analysis Conference Tracker</h1>
+
+<div class="subtitle">
+Environmental Analysis • Mass Spectrometry • PFAS • Microplastics & Nanoplastics • Water Analysis & Monitoring
+</div>
+
+<div class="updated">
+Last updated: September 3, 2026
+</div>
+
+<div class="legend">
+    <span class="badge new">NEW</span>
+    <span class="badge imminent">IMMINENT</span>
+    <span class="badge open">OPEN</span>
+    <span class="badge watch">WATCH</span>
+    <span class="badge closed">CLOSED</span>
+</div>
+
+<div class="table-wrapper">
+
+<table>
+
+<thead>
+<tr>
+    <th>Conference</th>
+    <th>Topic / Relevance</th>
+    <th>Conference Dates</th>
+    <th>Location</th>
+    <th>Milestone / Deadline</th>
+    <th>Milestone Type</th>
+    <th>Submission Type</th>
+    <th>Status / Update</th>
+    <th>Official Source</th>
+    <th>Last Checked</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td><strong>EWCPS 2027</strong></td>
+<td>ICP-MS, plasma spectrochemistry, elemental & environmental analysis</td>
+<td>Feb 7–12, 2027</td>
+<td>Athens, Greece</td>
+<td class="deadline">Sep 4, 2026</td>
+<td>Abstract deadline</td>
+<td>Scientific abstract</td>
+<td><span class="badge imminent">IMMINENT</span><br>Deadline extended to Sep 4</td>
+<td><a href="https://ewcps2027.org/" target="_blank">Official site ↗</a></td>
+<td>Sep 3, 2026</td>
+</tr>
+
+<tr>
+<td><strong>AWWA ACE27</strong></td>
+<td>Water analysis, drinking water, treatment & monitoring</td>
+<td>Jun 13–16, 2027</td>
+<td>San Diego, CA, USA</td>
+<td class="deadline">Sep 10, 2026</td>
+<td>Abstract deadline</td>
+<td>Individual presentations, special-topic sessions & posters</td>
+<td><span class="badge imminent">IMMINENT</span></td>
+<td><a href="https://ace.awwa.org/" target="_blank">Official site ↗</a></td>
+<td>Sep 3, 2026</td>
+</tr>
+
+<tr>
+<td><strong>Texas Water 2027</strong></td>
+<td>Water / wastewater analysis & monitoring</td>
+<td>Mar 30–Apr 2, 2027</td>
+<td>Houston, TX, USA</td>
+<td class="deadline">Sep 16, 2026</td>
+<td>Abstract deadline</td>
+<td>Conference presentation abstract</td>
+<td><span class="badge open">OPEN</span></td>
+<td><a href="https://www.txwater.org/" target="_blank">Official site ↗</a></td>
+<td>Sep 3, 2026</td>
+</tr>
+
+<tr>
+<td><strong>IAGLR 70th Annual Conference</strong></td>
+<td>Water quality, contaminants, monitoring & Great Lakes research</td>
+<td>May 24–28, 2027</td>
+<td>Duluth, MN, USA</td>
+<td class="deadline">Sep 18, 2026</td>
+<td>Scientific-session proposal deadline</td>
+<td>Scientific session proposal</td>
+<td><span class="badge new">NEW</span></td>
+<td><a href="https://iaglr.org/" target="_blank">Official site ↗</a></td>
+<td>Sep 3, 2026</td>
+</tr>
+
+<tr>
+<td><strong>Pittcon 2027</strong></td>
+<td>Environmental analysis & analytical instrumentation</td>
+<td>Apr 24–28, 2027</td>
+<td>Pittsburgh, PA, USA</td>
+<td class="deadline">Sep 21, 2026</td>
+<td>Networking roundtable deadline</td>
+<td>Networking roundtable proposal</td>
+<td><span class="badge open">OPEN</span></td>
+<td><a href="https://pittcon.org/conference/call-for-submissions/" target="_blank">Official call ↗</a></td>
+<td>Sep 3, 2026</td>
+</tr>
+
+<tr>
+<td><strong>ACS Spring 2027 – ENVR / ANYL</strong></td>
+<td>Environmental chemistry, analytical chemistry & micro/nanoplastics</td>
+<td>Mar 21–25, 2027</td>
+<td>New Orleans, LA, USA</td>
+<td class="deadline">Sep 28, 2026</td>
+<td>Abstract deadline</td>
+<td>Oral / poster abstracts</td>
+<td><span class="badge open">OPEN</span></td>
+<td><a href="https://callforabstracts.acs.org/acsspring2027" target="_blank">Official call ↗</a></td>
+<td>Sep 3, 2026</td>
+</tr>
+
+<tr>
+<td><strong>Pittcon 2027</strong></td>
+<td>Environmental analysis & analytical instrumentation</td>
+<td>Apr 24–28, 2027</td>
+<td>Pittsburgh, PA, USA</td>
+<td class="deadline">Sep 28, 2026</td>
+<td>Oral abstract deadline</td>
+<td>20-minute oral presentation</td>
+<td><span class="badge open">OPEN</span></td>
+<td><a href="https://pittcon.org/conference/call-for-submissions/" target="_blank">Official call ↗</a></td>
+<td>Sep 3, 2026</td>
+</tr>
+
+<tr>
+<td><strong>UCOWR / NIWR 2027</strong></td>
+<td>Water resources, water quality & monitoring</td>
+<td>Jun 15–17, 2027</td>
+<td>Newark, DE, USA</td>
+<td class="deadline">Sep 28, 2026</td>
+<td>Special-session proposal deadline</td>
+<td>Special session</td>
+<td><span class="badge open">OPEN</span></td>
+<td><a href="https://ucowr.org/conference/" target="_blank">Official site ↗</a></td>
+<td>Sep 3, 2026</td>
+</tr>
+
+<tr>
+<td><strong>Ecological & Environmental Chemistry 2027</strong></td>
+<td>Environmental chemistry; water, air & soil analysis</td>
+<td>Mar 4–5, 2027</td>
+<td>Chisinau, Moldova</td>
+<td class="deadline">Oct 1, 2026</td>
+<td>Registration deadline</td>
+<td>Oral / poster</td>
+<td><span class="badge new">NEW</span></td>
+<td>Official conference site</td>
+<td>Sep 3, 2026</td>
+</tr>
+
+<tr>
+<td><strong>Pittcon 2027</strong></td>
+<td>Environmental analysis & analytical instrumentation</td>
+<td>Apr 24–28, 2027</td>
+<td>Pittsburgh, PA, USA</td>
+<td class="deadline">Oct 15, 2026</td>
+<td>Poster abstract deadline</td>
+<td>Poster presentation</td>
+<td><span class="badge open">OPEN</span></td>
+<td><a href="https://pittcon.org/conference/call-for-submissions/" target="_blank">Official call ↗</a></td>
+<td>Sep 3, 2026</td>
+</tr>
+
+<tr>
+<td><strong>Northeast Aquatic Biologists Conference 2027</strong></td>
+<td>Water-quality monitoring, biomonitoring & emerging contaminants</td>
+<td>Feb 10–12, 2027</td>
+<td>Glens Falls, NY, USA</td>
+<td class="deadline">Oct 30, 2026</td>
+<td>Abstract deadline</td>
+<td>Scientific presentation</td>
+<td><span class="badge new">NEW</span></td>
+<td><a href="https://neiwpcc.org/" target="_blank">NEIWPCC ↗</a></td>
+<td>Sep 3, 2026</td>
+</tr>
+
+<tr>
+<td><strong>Pittcon 2027</strong></td>
+<td>Environmental analysis & analytical instrumentation</td>
+<td>Apr 24–28, 2027</td>
+<td>Pittsburgh, PA, USA</td>
+<td class="deadline">Nov 20, 2026</td>
+<td>Undergraduate poster deadline</td>
+<td>Undergraduate poster</td>
+<td><span class="badge open">OPEN</span></td>
+<td><a href="https://pittcon.org/conference/call-for-submissions/" target="_blank">Official call ↗</a></td>
+<td>Sep 3, 2026</td>
+</tr>
+
+<tr>
+<td><strong>ASMS Winter Conference 2027</strong></td>
+<td>Mass spectrometry — lipids & lipidomics</td>
+<td>Jan 28–31, 2027</td>
+<td>Santa Fe, NM, USA</td>
+<td class="deadline">Dec 4, 2026</td>
+<td>Travel stipend deadline</td>
+<td>Student / postdoc application</td>
+<td><span class="badge open">OPEN</span></td>
+<td><a href="https://www.asms.org/conferences/winter-conference" target="_blank">Official site ↗</a></td>
+<td>Sep 3, 2026</td>
+</tr>
+
+<tr>
+<td><strong>ASMS Winter Conference 2027</strong></td>
+<td>Mass spectrometry — lipids & lipidomics</td>
+<td>Jan 28–31, 2027</td>
+<td>Santa Fe, NM, USA</td>
+<td class="deadline">Dec 11, 2026</td>
+<td>Abstract deadline</td>
+<td>Poster / short talk</td>
+<td><span class="badge open">OPEN</span></td>
+<td><a href="https://www.asms.org/conferences/winter-conference" target="_blank">Official site ↗</a></td>
+<td>Sep 3, 2026</td>
+</tr>
+
+<tr>
+<td><strong>ASMS Winter Conference 2027</strong></td>
+<td>Mass spectrometry</td>
+<td>Jan 28–31, 2027</td>
+<td>Santa Fe, NM, USA</td>
+<td class="deadline">Dec 18, 2026</td>
+<td>Advance registration</td>
+<td>Registration</td>
+<td><span class="badge open">OPEN</span></td>
+<td><a href="https://www.asms.org/conferences/winter-conference" target="_blank">Official site ↗</a></td>
+<td>Sep 3, 2026</td>
+</tr>
+
+<tr>
+<td><strong>AWWA / AMTA Membrane Technology Conference 2027</strong></td>
+<td>PFAS, microplastics, emerging contaminants & water treatment</td>
+<td>Mar 22–25, 2027</td>
+<td>Denver, CO, USA</td>
+<td class="deadline">Late Fall 2026</td>
+<td>Registration opening</td>
+<td>Registration</td>
+<td><span class="badge watch">WATCH</span><br>Abstract call closed</td>
+<td><a href="https://www.awwa.org/" target="_blank">AWWA ↗</a></td>
+<td>Sep 3, 2026</td>
+</tr>
+
+<tr>
+<td><strong>75th ASMS Conference</strong></td>
+<td>Mass spectrometry & analytical instrumentation</td>
+<td>Jun 6–10, 2027</td>
+<td>Houston, TX, USA</td>
+<td class="deadline">TBD</td>
+<td>Abstract submission</td>
+<td>Scientific presentation</td>
+<td><span class="badge watch">WATCH</span></td>
+<td><a href="https://www.asms.org/conferences/annual-conference/future-annual-conferences" target="_blank">ASMS ↗</a></td>
+<td>Sep 3, 2026</td>
+</tr>
+
+<tr>
+<td><strong>HPLC 2027</strong></td>
+<td>Separation science, chromatography, MS & environmental analysis</td>
+<td>Jun 20–24, 2027</td>
+<td>Innsbruck, Austria</td>
+<td class="deadline">By end of 2026</td>
+<td>Abstract submission opens</td>
+<td>Scientific abstract</td>
+<td><span class="badge watch">WATCH</span></td>
+<td><a href="https://www.hplc2027.com/" target="_blank">Official site ↗</a></td>
+<td>Sep 3, 2026</td>
+</tr>
+
+<tr>
+<td><strong>Environmental Measurement Symposium / NEMC 2027</strong></td>
+<td>Environmental measurement, analytical methods & water analysis</td>
+<td>Aug 2–6, 2027</td>
+<td>Chicago, IL, USA</td>
+<td class="deadline">TBD</td>
+<td>Call for abstracts</td>
+<td>Environmental measurement presentation</td>
+<td><span class="badge watch">WATCH</span></td>
+<td><a href="https://envirosymposium.group/" target="_blank">Official site ↗</a></td>
+<td>Sep 3, 2026</td>
+</tr>
+
+<tr>
+<td><strong>ISEAC-42</strong></td>
+<td>Environmental & food analytical chemistry; microplastics</td>
+<td>Nov 30–Dec 3, 2027</td>
+<td>Amsterdam, Netherlands</td>
+<td class="deadline">TBD</td>
+<td>Important dates / abstract call</td>
+<td>Scientific abstract</td>
+<td><span class="badge watch">WATCH</span></td>
+<td><a href="https://iaeac.com/iseac-42/" target="_blank">Official site ↗</a></td>
+<td>Sep 3, 2026</td>
+</tr>
+
+</tbody>
+</table>
+
+</div>
+
+<footer>
+Conference information is monitored from official organizer and professional-society sources.
+Always verify critical submission deadlines with the linked conference organizer before submission.
+</footer>
+
+</div>
+
+</body>
+</html>
