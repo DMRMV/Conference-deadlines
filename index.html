@@ -1,460 +1,614 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Environmental Analysis Conference Tracker</title>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Verified conferences and deadlines in environmental chemistry, water quality, PFAS, microplastics and mass spectrometry through early 2028.">
+  <style>
+    :root{color-scheme:light dark}
+    body{margin:0}
+    img{max-width:100%}
+    [hidden]{display:none!important}
+  </style>
+<title>Environmental Chemistry Conference Radar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <style>
-    * {
-        box-sizing: border-box;
+  :root{
+    --ground:#EFF2F1;
+    --surface:#FFFFFF;
+    --surface-2:#E5EAE8;
+    --line:#CFD8D5;
+    --line-soft:#DEE5E3;
+    --ink:#14201E;
+    --ink-2:#3B4B48;
+    --muted:#5E6E6B;
+    --accent:#0E6157;
+    --accent-soft:#DCEBE8;
+    --high:#0E6157;
+    --high-bg:#DCEBE8;
+    --med:#7A5606;
+    --med-bg:#F2E9D2;
+    --low:#4E5F6B;
+    --low-bg:#E2E8EB;
+    --flag:#A4432B;
+    --flag-bg:#F6E2DC;
+    --shadow:0 1px 2px rgba(20,32,30,.06), 0 8px 24px -16px rgba(20,32,30,.35);
+    --radius:10px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#0D1513;
+      --surface:#131E1C;
+      --surface-2:#1B2826;
+      --line:#2C3B38;
+      --line-soft:#22302E;
+      --ink:#E4EBE9;
+      --ink-2:#C2CFCC;
+      --muted:#94A5A1;
+      --accent:#58B5A6;
+      --accent-soft:#16302C;
+      --high:#6DC3B4;
+      --high-bg:#123330;
+      --med:#D9AE55;
+      --med-bg:#33280F;
+      --low:#9FB3BC;
+      --low-bg:#1E2A2F;
+      --flag:#E08A6E;
+      --flag-bg:#33201A;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.9);
     }
+  }
+  :root[data-theme="dark"]{
+    --ground:#0D1513;
+    --surface:#131E1C;
+    --surface-2:#1B2826;
+    --line:#2C3B38;
+    --line-soft:#22302E;
+    --ink:#E4EBE9;
+    --ink-2:#C2CFCC;
+    --muted:#94A5A1;
+    --accent:#58B5A6;
+    --accent-soft:#16302C;
+    --high:#6DC3B4;
+    --high-bg:#123330;
+    --med:#D9AE55;
+    --med-bg:#33280F;
+    --low:#9FB3BC;
+    --low-bg:#1E2A2F;
+    --flag:#E08A6E;
+    --flag-bg:#33201A;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.9);
+  }
 
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-        background: #f5f7fa;
-        color: #1f2937;
-    }
+  *{box-sizing:border-box}
+  body{
+    background:var(--ground);
+    color:var(--ink);
+    font-family:"IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size:15px;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1220px;margin:0 auto;padding:28px 20px 72px;display:flex;flex-direction:column;gap:22px}
 
-    .container {
-        max-width: 1500px;
-        margin: 0 auto;
-        padding: 40px 25px;
-    }
+  /* ---- masthead ---- */
+  .masthead{display:flex;flex-direction:column;gap:12px;padding-bottom:20px;border-bottom:2px solid var(--ink)}
+  .eyebrow{
+    font-family:"IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600;
+  }
+  h1{
+    font-family:"Archivo", ui-sans-serif, system-ui, sans-serif;
+    font-weight:700;font-size:clamp(28px,4.4vw,42px);line-height:1.06;letter-spacing:-.02em;
+    margin:0;text-wrap:balance;
+  }
+  .standfirst{margin:0;max-width:64ch;color:var(--ink-2);font-size:15.5px}
+  .stamp{
+    display:flex;flex-wrap:wrap;gap:8px 18px;align-items:baseline;
+    font-family:"IBM Plex Mono", ui-monospace, monospace;font-size:12px;color:var(--muted);
+  }
+  .stamp b{color:var(--ink);font-weight:600}
 
-    h1 {
-        margin-bottom: 8px;
-        font-size: 32px;
-    }
+  /* ---- legend ---- */
+  .legend{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1px;
+    background:var(--line-soft);border:1px solid var(--line-soft);border-radius:var(--radius);overflow:hidden;
+  }
+  .legend div{background:var(--surface);padding:11px 14px;font-size:13px;color:var(--ink-2)}
+  .legend strong{display:block;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:3px}
+  .legend .l-high strong{color:var(--high)}
+  .legend .l-med strong{color:var(--med)}
+  .legend .l-low strong{color:var(--low)}
+  .legend .l-flag strong{color:var(--flag)}
 
-    .subtitle {
-        color: #667085;
-        margin-bottom: 8px;
-    }
+  /* ---- controls ---- */
+  .controls{
+    position:sticky;top:0;z-index:20;
+    background:var(--ground);
+    padding:12px 0 12px;
+    border-bottom:1px solid var(--line);
+    display:flex;flex-wrap:wrap;gap:12px;align-items:center;
+  }
+  .search{position:relative;flex:1 1 260px;min-width:0}
+  .search input{
+    width:100%;padding:10px 12px 10px 34px;font:inherit;font-size:14px;
+    color:var(--ink);background:var(--surface);
+    border:1px solid var(--line);border-radius:8px;
+  }
+  .search input::placeholder{color:var(--muted)}
+  .search svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);width:14px;height:14px;stroke:var(--muted);fill:none;stroke-width:2}
+  .filterbar{display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center;width:100%}
+  .fgroup{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+  .flabel{
+    font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.11em;text-transform:uppercase;
+    color:var(--muted);font-weight:600;margin-right:2px;
+  }
+  .chip{
+    font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;
+    padding:8px 12px;border-radius:999px;border:1px solid var(--line);
+    background:var(--surface);color:var(--muted);cursor:pointer;
+  }
+  .chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--ground)}
+  .chip.c-high[aria-pressed="true"]{background:var(--high);border-color:var(--high);color:var(--surface)}
+  .chip.c-med[aria-pressed="true"]{background:var(--med);border-color:var(--med);color:var(--surface)}
+  .chip.c-low[aria-pressed="true"]{background:var(--low);border-color:var(--low);color:var(--surface)}
+  .chip.c-geo[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+  .count{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted);margin-left:auto;white-space:nowrap}
+  .count b{color:var(--ink)}
+  :where(button,a,input):focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
-    .updated {
-        color: #667085;
-        font-size: 14px;
-        margin-bottom: 25px;
-    }
+  /* ---- table ---- */
+  .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);box-shadow:var(--shadow)}
+  table{width:100%;border-collapse:collapse;min-width:900px}
+  thead th{
+    position:sticky;top:0;z-index:5;
+    background:var(--surface-2);
+    font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;
+    color:var(--ink-2);text-align:left;padding:0;border-bottom:1px solid var(--line);
+  }
+  thead th button{
+    all:unset;box-sizing:border-box;display:flex;align-items:center;gap:5px;width:100%;
+    padding:11px 14px;cursor:pointer;font:inherit;color:inherit;
+  }
+  thead th button:hover{color:var(--accent)}
+  .arrow{font-size:9px;opacity:0;transition:opacity .12s}
+  th[aria-sort] .arrow{opacity:1;color:var(--accent)}
+  tbody td{padding:14px;border-bottom:1px solid var(--line-soft);vertical-align:top;font-size:14px}
+  tbody tr:last-child td{border-bottom:0}
+  tbody tr:hover{background:var(--accent-soft)}
+  .c-name{width:25%}
+  .c-rel{width:16%}
+  .c-when{width:21%}
+  .c-mile{width:24%}
+  .c-status{width:14%}
 
-    .legend {
-        margin-bottom: 20px;
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-    }
+  .conf a{
+    font-family:"Archivo",sans-serif;font-weight:600;font-size:15px;line-height:1.25;
+    color:var(--ink);text-decoration:none;border-bottom:1.5px solid var(--accent);
+    text-underline-offset:3px;display:inline;
+  }
+  .conf a:hover{color:var(--accent)}
+  .conf .series{display:block;margin-top:4px;font-size:12.5px;color:var(--muted)}
 
-    .badge {
-        padding: 6px 10px;
-        border-radius: 20px;
-        font-size: 12px;
-        font-weight: 600;
-    }
+  .badge{
+    display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:600;
+    letter-spacing:.08em;text-transform:uppercase;padding:3px 7px;border-radius:4px;white-space:nowrap;
+  }
+  .b-High{background:var(--high-bg);color:var(--high)}
+  .b-Medium{background:var(--med-bg);color:var(--med)}
+  .b-Low{background:var(--low-bg);color:var(--low)}
+  .why{display:block;margin-top:6px;font-size:13px;color:var(--ink-2)}
 
-    .open {
-        background: #dcfce7;
-        color: #166534;
-    }
+  .place{font-weight:500}
+  .dates{
+    display:block;font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--muted);
+    font-variant-numeric:tabular-nums;margin-top:3px;
+  }
+  .tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}
+  .region{
+    display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:600;
+    letter-spacing:.08em;text-transform:uppercase;padding:2px 6px;border-radius:4px;
+    background:var(--accent-soft);color:var(--accent);
+  }
+  .region.unassigned{background:var(--flag-bg);color:var(--flag)}
+  .fmt{
+    display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:600;
+    letter-spacing:.08em;text-transform:uppercase;padding:2px 6px;border-radius:4px;
+    border:1px solid var(--line);color:var(--muted);
+  }
+  .fmt.hybrid{border-color:var(--accent);color:var(--accent)}
+  .fmt.virtual{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
 
-    .imminent {
-        background: #fef3c7;
-        color: #92400e;
-    }
+  .mdate{
+    font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:13.5px;
+    font-variant-numeric:tabular-nums;color:var(--ink);display:block;
+  }
+  .mtype{
+    display:inline-block;margin-top:5px;font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:600;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--accent);
+  }
+  .mnote{display:block;margin-top:6px;font-size:12.5px;color:var(--muted);line-height:1.45}
+  .mdate.none{color:var(--muted);font-weight:500}
 
-    .new {
-        background: #dbeafe;
-        color: #1e40af;
-    }
+  .status{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+  .status.check{color:var(--flag);background:var(--flag-bg);padding:4px 8px;border-radius:4px;display:inline-block}
+  .status .snote{display:block;margin-top:6px;font-family:"IBM Plex Sans",sans-serif;font-size:12.5px;letter-spacing:0;text-transform:none;font-weight:400;color:var(--muted);line-height:1.45}
 
-    .watch {
-        background: #e5e7eb;
-        color: #374151;
-    }
+  .empty{padding:36px 16px;text-align:center;color:var(--muted);font-size:14px}
 
-    .closed {
-        background: #fee2e2;
-        color: #991b1b;
-    }
+  footer{
+    border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:13px;
+    display:flex;flex-direction:column;gap:8px;max-width:72ch;
+  }
+  footer b{color:var(--ink-2)}
 
-    .table-wrapper {
-        overflow-x: auto;
-        background: white;
-        border-radius: 12px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  /* ---- phone: table becomes records ---- */
+  @media (max-width:820px){
+    .wrap{padding:20px 14px 56px;gap:18px}
+    table{min-width:0}
+    .tablewrap{overflow:visible;border:0;background:none;box-shadow:none;border-radius:0}
+    thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+    table,tbody,tr,td{display:block;width:auto}
+    tbody tr{
+      background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+      margin-bottom:12px;padding:4px 2px;box-shadow:var(--shadow);
     }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        min-width: 1300px;
+    tbody tr:hover{background:var(--surface)}
+    tbody td{border-bottom:1px solid var(--line-soft);padding:11px 14px}
+    tbody td:last-child{border-bottom:0}
+    tbody td::before{
+      content:attr(data-label);display:block;
+      font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;
+      color:var(--muted);margin-bottom:5px;
     }
-
-    th {
-        background: #111827;
-        color: white;
-        padding: 14px;
-        text-align: left;
-        font-size: 13px;
-        position: sticky;
-        top: 0;
-    }
-
-    td {
-        padding: 14px;
-        border-bottom: 1px solid #e5e7eb;
-        vertical-align: top;
-        font-size: 14px;
-    }
-
-    tr:hover {
-        background: #f9fafb;
-    }
-
-    a {
-        color: #2563eb;
-        text-decoration: none;
-        font-weight: 500;
-    }
-
-    a:hover {
-        text-decoration: underline;
-    }
-
-    .deadline {
-        font-weight: 700;
-        white-space: nowrap;
-    }
-
-    .status {
-        font-weight: 600;
-    }
-
-    footer {
-        margin-top: 25px;
-        color: #667085;
-        font-size: 13px;
-    }
+    td.c-name::before{display:none}
+    .controls{gap:9px;padding:10px 0}
+    .count{margin-left:0}
+  }
 </style>
 </head>
-
 <body>
+<div class="wrap">
 
-<div class="container">
+  <header class="masthead">
+    <div class="eyebrow">Environmental chemistry · water · PFAS · microplastics · MS</div>
+    <h1>Conference Radar</h1>
+    <p class="standfirst">Verified meetings and deadlines across environmental chemistry, water quality, PFAS, microplastics, analytical instrumentation and mass spectrometry — every event or deadline falling between now and early 2028. Each name links to the source that was checked.</p>
+    <div class="stamp">
+      <span>Last updated <b>4 September 2026</b></span>
+      <span><b id="total">0</b> events tracked</span>
+      <span>Window: <b>Sep 2026 – Mar 2028</b></span>
+    </div>
+  </header>
 
-<h1>Environmental Analysis Conference Tracker</h1>
+  <section class="legend" aria-label="How to read this table">
+    <div class="l-high"><strong>High</strong>The topic is the core subject of the meeting.</div>
+    <div class="l-med"><strong>Medium</strong>A substantial track or session within a broader programme.</div>
+    <div class="l-low"><strong>Low</strong>Adjacent field; occasional relevant papers.</div>
+    <div class="l-flag"><strong>Needs checking</strong>Source was ambiguous, incomplete or looked out of date.</div>
+  </section>
 
-<div class="subtitle">
-Environmental Analysis • Mass Spectrometry • PFAS • Microplastics & Nanoplastics • Water Analysis & Monitoring
+  <div class="controls">
+    <label class="search">
+      <span class="sr" hidden>Search conferences</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+      <input id="q" type="search" placeholder="Search by name, city or country…" autocomplete="off">
+    </label>
+    <div class="count"><b id="shown">0</b> shown</div>
+    <div class="filterbar">
+      <div class="fgroup" role="group" aria-label="Filter by relevance">
+        <span class="flabel">Relevance</span>
+        <button class="chip" data-rel="all" aria-pressed="true">All</button>
+        <button class="chip c-high" data-rel="High" aria-pressed="false">High</button>
+        <button class="chip c-med" data-rel="Medium" aria-pressed="false">Medium</button>
+        <button class="chip c-low" data-rel="Low" aria-pressed="false">Low</button>
+      </div>
+      <div class="fgroup" role="group" aria-label="Filter by region">
+        <span class="flabel">Region</span>
+        <button class="chip c-geo" data-region="all" aria-pressed="true">All</button>
+        <button class="chip c-geo" data-region="North America" aria-pressed="false">North America</button>
+        <button class="chip c-geo" data-region="Latin America" aria-pressed="false">Latin America</button>
+        <button class="chip c-geo" data-region="Europe" aria-pressed="false">Europe</button>
+        <button class="chip c-geo" data-region="Africa" aria-pressed="false">Africa</button>
+        <button class="chip c-geo" data-region="APAC" aria-pressed="false">APAC</button>
+        <button class="chip c-geo" data-region="Australia" aria-pressed="false">Australia</button>
+        <button class="chip c-geo" data-region="Virtual" aria-pressed="false">Virtual</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="tablewrap">
+    <table>
+      <thead>
+        <tr>
+          <th class="c-name" scope="col"><button type="button" data-sort="name">Conference <span class="arrow">▲</span></button></th>
+          <th class="c-rel" scope="col"><button type="button" data-sort="rel">Relevance <span class="arrow">▲</span></button></th>
+          <th class="c-when" scope="col"><button type="button" data-sort="when">Dates / location <span class="arrow">▲</span></button></th>
+          <th class="c-mile" scope="col" aria-sort="ascending"><button type="button" data-sort="mile">Next milestone <span class="arrow">▲</span></button></th>
+          <th class="c-status" scope="col"><button type="button" data-sort="status">Status / update <span class="arrow">▲</span></button></th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <div class="empty" id="empty" hidden>No conference matches that search.</div>
+  </div>
+
+  <footer>
+    <p><b>Sorting.</b> The default order is by next milestone, earliest first. Events whose only remaining date is the meeting itself sit below those, and events with no announced deadline sit at the bottom. Any column header re-sorts the table.</p>
+    <p><b>Regions.</b> The region tag follows the physical host city, so hybrid meetings are filed under the region they take place in and can still be reached through the Europe, North America or APAC filters. Virtual-only meetings sit in their own Virtual group rather than being assigned a geography. Australia covers Australia and New Zealand; the rest of Asia-Pacific is APAC; Mexico, Central America, the Caribbean and South America are Latin America. Sorting the location column groups by region, then by date. Region and relevance filters combine.</p>
+    <p><b>Dates.</b> Nothing here is estimated. Where a deadline has not been published, the cell says “Not yet announced” rather than guessing. Deadlines shift — confirm on the linked page before you plan around one.</p>
+  </footer>
 </div>
 
-<div class="updated">
-Last updated: September 3, 2026
-</div>
+<script>
+// tier 0 = live deadline · 1 = only the event remains · 2 = nothing announced
+const DATA = [
+  {name:"AWWA Annual Conference & Exposition (ACE27)", series:"American Water Works Association", url:"https://ace.awwa.org/",
+   rel:"Medium", why:"Water-quality track among utility topics", place:"San Diego, CA, USA", dates:"13–16 June 2027", when:"2027-06-13", fmt:"",
+   tier:0, mile:"2026-09-10", mdate:"10 Sep 2026", mtype:"Abstract submission", mnote:"", status:"New entry", snote:""},
 
-<div class="legend">
-    <span class="badge new">NEW</span>
-    <span class="badge imminent">IMMINENT</span>
-    <span class="badge open">OPEN</span>
-    <span class="badge watch">WATCH</span>
-    <span class="badge closed">CLOSED</span>
-</div>
+  {name:"SETAC North America 47th Annual Meeting", series:"Society of Environmental Toxicology and Chemistry", url:"https://www.setac.org/discover-events/global-meetings/setac-north-america-47th-annual-meeting.html",
+   rel:"High", why:"Environmental chemistry is the subject", place:"Montreal, Canada", dates:"2–5 November 2026", when:"2026-11-02", fmt:"Hybrid",
+   tier:0, mile:"2026-09-16", mdate:"16 Sep 2026", mtype:"Early-bird registration", mnote:"Late-breaking abstracts close 14 Oct 2026 (US$50 fee).", status:"New entry", snote:""},
 
-<div class="table-wrapper">
+  {name:"Ozwater'27", series:"Australian Water Association", url:"https://www.ozwater.org/program/call-for-papers/submission-guide",
+   rel:"Medium", why:"Water quality within utility programme", place:"Sydney, Australia", dates:"4–6 May 2027", when:"2027-05-04", fmt:"",
+   tier:0, mile:"2026-09-18", mdate:"18 Sep 2026", mtype:"Paper / abstract submission", mnote:"Full papers due 22 Feb 2027.", status:"New entry", snote:""},
 
-<table>
+  {name:"RemTEC & Emerging Contaminants Summit", series:"BNP Media / Remediation Technology", url:"https://www.remediation-technology.com/remtecsummit/submit-abstract",
+   rel:"High", why:"PFAS and emerging contaminants core", place:"Rosemont, IL, USA", dates:"13–15 April 2027", when:"2027-04-13", fmt:"",
+   tier:0, mile:"2026-09-21", mdate:"21 Sep 2026", mtype:"Abstract submission", mnote:"", status:"New entry", snote:""},
 
-<thead>
-<tr>
-    <th>Conference</th>
-    <th>Topic / Relevance</th>
-    <th>Conference Dates</th>
-    <th>Location</th>
-    <th>Milestone / Deadline</th>
-    <th>Milestone Type</th>
-    <th>Submission Type</th>
-    <th>Status / Update</th>
-    <th>Official Source</th>
-    <th>Last Checked</th>
-</tr>
-</thead>
+  {name:"ACS Spring 2027", series:"American Chemical Society national meeting", url:"https://callforabstracts.acs.org/acsspring2027",
+   rel:"Medium", why:"ENVR and ANYL division sessions", place:"New Orleans, LA, USA", dates:"21–25 March 2027", when:"2027-03-21", fmt:"Hybrid",
+   tier:0, mile:"2026-09-28", mdate:"28 Sep 2026", mtype:"Abstract submission", mnote:"Deadline is 23:59 EST. Dates and city confirmed via the ACS Environmental Chemistry Division.", status:"New entry", snote:""},
 
-<tbody>
+  {name:"Pittcon 2027", series:"Pittsburgh Conference on Analytical Chemistry", url:"https://pittcon.org/conference/call-for-submissions/",
+   rel:"Medium", why:"Dedicated Environmental & Energy track", place:"Pittsburgh, PA, USA", dates:"24–28 April 2027", when:"2027-04-24", fmt:"",
+   tier:0, mile:"2026-09-28", mdate:"28 Sep 2026", mtype:"Oral abstract submission", mnote:"Posters close 15 Oct 2026; undergraduate posters 20 Nov 2026.", status:"New entry", snote:""},
 
-<tr>
-<td><strong>EWCPS 2027</strong></td>
-<td>ICP-MS, plasma spectrochemistry, elemental & environmental analysis</td>
-<td>Feb 7–12, 2027</td>
-<td>Athens, Greece</td>
-<td class="deadline">Sep 4, 2026</td>
-<td>Abstract deadline</td>
-<td>Scientific abstract</td>
-<td><span class="badge imminent">IMMINENT</span><br>Deadline extended to Sep 4</td>
-<td><a href="https://ewcps2027.org/" target="_blank">Official site ↗</a></td>
-<td>Sep 3, 2026</td>
-</tr>
+  {name:"7th ICRAPHE / 22nd HRMS & LC-MS/MS Workshop", series:"Pharmaceuticals in the environment · environmental HRMS", url:"https://icraphe-hrms.activacongresos.com/important-dates/",
+   rel:"High", why:"Environmental HRMS is the subject", place:"Barcelona, Spain", dates:"9–11 November 2026", when:"2026-11-09", fmt:"",
+   tier:0, mile:"2026-10-02", mdate:"2 Oct 2026", mtype:"Last-minute poster abstracts", mnote:"Main abstract deadline was 24 Jul 2026; early-bird closed 7 Aug 2026.", status:"Needs checking", snote:"Official site publishes deadlines but not the meeting dates; November dates come from a third-party listing."},
 
-<tr>
-<td><strong>AWWA ACE27</strong></td>
-<td>Water analysis, drinking water, treatment & monitoring</td>
-<td>Jun 13–16, 2027</td>
-<td>San Diego, CA, USA</td>
-<td class="deadline">Sep 10, 2026</td>
-<td>Abstract deadline</td>
-<td>Individual presentations, special-topic sessions & posters</td>
-<td><span class="badge imminent">IMMINENT</span></td>
-<td><a href="https://ace.awwa.org/" target="_blank">Official site ↗</a></td>
-<td>Sep 3, 2026</td>
-</tr>
+  {name:"AWWA Water Quality Technology Conference (WQTC26)", series:"American Water Works Association", url:"https://www.awwa.org/event/water-quality-technology/",
+   rel:"High", why:"Drinking-water quality and CECs core", place:"Memphis, TN, USA", dates:"15–19 November 2026", when:"2026-11-15", fmt:"",
+   tier:0, mile:"2026-10-23", mdate:"23 Oct 2026", mtype:"Early-bird registration", mnote:"Hotel block also closes 23 Oct 2026.", status:"New entry", snote:""},
 
-<tr>
-<td><strong>Texas Water 2027</strong></td>
-<td>Water / wastewater analysis & monitoring</td>
-<td>Mar 30–Apr 2, 2027</td>
-<td>Houston, TX, USA</td>
-<td class="deadline">Sep 16, 2026</td>
-<td>Abstract deadline</td>
-<td>Conference presentation abstract</td>
-<td><span class="badge open">OPEN</span></td>
-<td><a href="https://www.txwater.org/" target="_blank">Official site ↗</a></td>
-<td>Sep 3, 2026</td>
-</tr>
+  {name:"SETAC Europe 37th Annual Meeting", series:"Society of Environmental Toxicology and Chemistry", url:"https://www.setac.org/discover-events/global-meetings/setac-europe-37th-annual-meeting.html",
+   rel:"High", why:"Environmental chemistry is the subject", place:"Geneva, Switzerland", dates:"25–29 April 2027", when:"2027-04-25", fmt:"",
+   tier:0, mile:"2026-11-10", mdate:"10 Nov 2026", mtype:"Abstract submission", mnote:"Training-course proposals close 14 Oct 2026; student grants 17 Nov 2026.", status:"New entry", snote:""},
 
-<tr>
-<td><strong>IAGLR 70th Annual Conference</strong></td>
-<td>Water quality, contaminants, monitoring & Great Lakes research</td>
-<td>May 24–28, 2027</td>
-<td>Duluth, MN, USA</td>
-<td class="deadline">Sep 18, 2026</td>
-<td>Scientific-session proposal deadline</td>
-<td>Scientific session proposal</td>
-<td><span class="badge new">NEW</span></td>
-<td><a href="https://iaglr.org/" target="_blank">Official site ↗</a></td>
-<td>Sep 3, 2026</td>
-</tr>
+  {name:"GRC — Water Disinfection, Byproducts & Health", series:"Gordon Research Conference (+ GRS 31 Jul–1 Aug)", url:"https://www.grc.org/water-disinfection-byproducts-and-health-conference/2027/",
+   rel:"High", why:"Water treatment chemistry core", place:"South Hadley, MA, USA", dates:"1–6 August 2027", when:"2027-08-01", fmt:"",
+   tier:0, mile:"2027-07-04", mdate:"4 Jul 2027", mtype:"Application deadline", mnote:"GRC admits by application, not open registration; the seminar needs a separate application.", status:"New entry", snote:""},
 
-<tr>
-<td><strong>Pittcon 2027</strong></td>
-<td>Environmental analysis & analytical instrumentation</td>
-<td>Apr 24–28, 2027</td>
-<td>Pittsburgh, PA, USA</td>
-<td class="deadline">Sep 21, 2026</td>
-<td>Networking roundtable deadline</td>
-<td>Networking roundtable proposal</td>
-<td><span class="badge open">OPEN</span></td>
-<td><a href="https://pittcon.org/conference/call-for-submissions/" target="_blank">Official call ↗</a></td>
-<td>Sep 3, 2026</td>
-</tr>
+  {name:"BMSS 46th Annual Meeting", series:"British Mass Spectrometry Society", url:"https://www.bmss.org.uk/meetings/",
+   rel:"Low", why:"General MS; occasional environmental papers", place:"Leeds, UK", dates:"8–10 September 2026", when:"2026-09-08", fmt:"",
+   tier:1, mile:"2026-09-08", mdate:"8 Sep 2026", mtype:"Event itself — no deadline left", mnote:"", status:"New entry", snote:""},
 
-<tr>
-<td><strong>ACS Spring 2027 – ENVR / ANYL</strong></td>
-<td>Environmental chemistry, analytical chemistry & micro/nanoplastics</td>
-<td>Mar 21–25, 2027</td>
-<td>New Orleans, LA, USA</td>
-<td class="deadline">Sep 28, 2026</td>
-<td>Abstract deadline</td>
-<td>Oral / poster abstracts</td>
-<td><span class="badge open">OPEN</span></td>
-<td><a href="https://callforabstracts.acs.org/acsspring2027" target="_blank">Official call ↗</a></td>
-<td>Sep 3, 2026</td>
-</tr>
+  {name:"Dioxin 2026 — 46th International Symposium on POPs", series:"Halogenated POPs, held with BFR 2026", url:"https://dioxin2026.org/",
+   rel:"High", why:"POPs, PFAS and HRMS core subject", place:"Riva del Garda, Italy", dates:"14–18 September 2026", when:"2026-09-14", fmt:"",
+   tier:1, mile:"2026-09-14", mdate:"14 Sep 2026", mtype:"Event itself — no deadline left", mnote:"Standard registration rate closed 4 Sep 2026; late registration still open.", status:"New entry", snote:""},
 
-<tr>
-<td><strong>Pittcon 2027</strong></td>
-<td>Environmental analysis & analytical instrumentation</td>
-<td>Apr 24–28, 2027</td>
-<td>Pittsburgh, PA, USA</td>
-<td class="deadline">Sep 28, 2026</td>
-<td>Oral abstract deadline</td>
-<td>20-minute oral presentation</td>
-<td><span class="badge open">OPEN</span></td>
-<td><a href="https://pittcon.org/conference/call-for-submissions/" target="_blank">Official call ↗</a></td>
-<td>Sep 3, 2026</td>
-</tr>
+  {name:"SETAC Asia-Pacific 15th Biennial Meeting", series:"Society of Environmental Toxicology and Chemistry", url:"https://www.setac.org/discover-events/global-meetings/setac-asia-pacific-15th-biennial-meeting/registration.html",
+   rel:"High", why:"Environmental chemistry is the subject", place:"Tsukuba, Japan", dates:"20–23 September 2026", when:"2026-09-20", fmt:"",
+   tier:1, mile:"2026-09-20", mdate:"20 Sep 2026", mtype:"Event itself — no deadline left", mnote:"Early-bird registration closed 27 Jul 2026.", status:"New entry", snote:""},
 
-<tr>
-<td><strong>UCOWR / NIWR 2027</strong></td>
-<td>Water resources, water quality & monitoring</td>
-<td>Jun 15–17, 2027</td>
-<td>Newark, DE, USA</td>
-<td class="deadline">Sep 28, 2026</td>
-<td>Special-session proposal deadline</td>
-<td>Special session</td>
-<td><span class="badge open">OPEN</span></td>
-<td><a href="https://ucowr.org/conference/" target="_blank">Official site ↗</a></td>
-<td>Sep 3, 2026</td>
-</tr>
+  {name:"WEFTEC 2026", series:"Water Environment Federation", url:"https://www.weftec.org/",
+   rel:"Medium", why:"Wastewater PFAS and micropollutant sessions", place:"New Orleans, LA, USA", dates:"26–30 September 2026", when:"2026-09-26", fmt:"",
+   tier:1, mile:"2026-09-26", mdate:"26 Sep 2026", mtype:"Event itself — no deadline left", mnote:"WEFTEC 2027 abstract portal opens October 2026; closing date not yet announced.", status:"New entry", snote:""},
 
-<tr>
-<td><strong>Ecological & Environmental Chemistry 2027</strong></td>
-<td>Environmental chemistry; water, air & soil analysis</td>
-<td>Mar 4–5, 2027</td>
-<td>Chisinau, Moldova</td>
-<td class="deadline">Oct 1, 2026</td>
-<td>Registration deadline</td>
-<td>Oral / poster</td>
-<td><span class="badge new">NEW</span></td>
-<td>Official conference site</td>
-<td>Sep 3, 2026</td>
-</tr>
+  {name:"SciX 2026", series:"Federation of Analytical Chemistry & Spectroscopy Societies", url:"https://scixconference.org/",
+   rel:"Medium", why:"Analytical instrumentation breadth", place:"Sparks / Reno, NV, USA", dates:"4–9 October 2026", when:"2026-10-04", fmt:"",
+   tier:1, mile:"2026-10-04", mdate:"4 Oct 2026", mtype:"Event itself — no deadline left", mnote:"Late-breaking submissions closed 26 Jun 2026.", status:"New entry", snote:""},
 
-<tr>
-<td><strong>Pittcon 2027</strong></td>
-<td>Environmental analysis & analytical instrumentation</td>
-<td>Apr 24–28, 2027</td>
-<td>Pittsburgh, PA, USA</td>
-<td class="deadline">Oct 15, 2026</td>
-<td>Poster abstract deadline</td>
-<td>Poster presentation</td>
-<td><span class="badge open">OPEN</span></td>
-<td><a href="https://pittcon.org/conference/call-for-submissions/" target="_blank">Official call ↗</a></td>
-<td>Sep 3, 2026</td>
-</tr>
+  {name:"IWA World Water Congress & Exhibition 2026", series:"International Water Association", url:"https://worldwatercongress.org/",
+   rel:"Medium", why:"Water quality within a broad programme", place:"Glasgow, UK", dates:"4–8 October 2026", when:"2026-10-04", fmt:"",
+   tier:1, mile:"2026-10-04", mdate:"4 Oct 2026", mtype:"Event itself — no deadline left", mnote:"Next editions: Kuching, Malaysia (2028) and São Paulo, Brazil (2030); dates unannounced.", status:"New entry", snote:""},
 
-<tr>
-<td><strong>Northeast Aquatic Biologists Conference 2027</strong></td>
-<td>Water-quality monitoring, biomonitoring & emerging contaminants</td>
-<td>Feb 10–12, 2027</td>
-<td>Glens Falls, NY, USA</td>
-<td class="deadline">Oct 30, 2026</td>
-<td>Abstract deadline</td>
-<td>Scientific presentation</td>
-<td><span class="badge new">NEW</span></td>
-<td><a href="https://neiwpcc.org/" target="_blank">NEIWPCC ↗</a></td>
-<td>Sep 3, 2026</td>
-</tr>
+  {name:"ISES 2026 Annual Meeting", series:"International Society of Exposure Science", url:"https://www.intlexposurescience.org/ises-2026-annual-meeting/",
+   rel:"Medium", why:"Exposure science; PFAS and analysis sessions", place:"Vancouver, Canada", dates:"4–8 October 2026", when:"2026-10-04", fmt:"",
+   tier:1, mile:"2026-10-04", mdate:"4 Oct 2026", mtype:"Event itself — closing date unpublished", mnote:"Regular abstracts closed; a late-breaking window opened in August 2026 with no stated closing date.", status:"Needs checking", snote:"Late-breaking deadline not published on the official page."},
 
-<tr>
-<td><strong>Pittcon 2027</strong></td>
-<td>Environmental analysis & analytical instrumentation</td>
-<td>Apr 24–28, 2027</td>
-<td>Pittsburgh, PA, USA</td>
-<td class="deadline">Nov 20, 2026</td>
-<td>Undergraduate poster deadline</td>
-<td>Undergraduate poster</td>
-<td><span class="badge open">OPEN</span></td>
-<td><a href="https://pittcon.org/conference/call-for-submissions/" target="_blank">Official call ↗</a></td>
-<td>Sep 3, 2026</td>
-</tr>
+  {name:"MICRO 2026 — Plastic Pollution from MACRO to nano", series:"MICRO international conference series", url:"https://micro2026.sciencesconf.org/",
+   rel:"High", why:"Microplastics is the whole subject", place:"Cádiz, Spain", dates:"12–16 October 2026", when:"2026-10-12", fmt:"",
+   tier:1, mile:"2026-10-12", mdate:"12 Oct 2026", mtype:"Event itself — no deadline left", mnote:"Registration closed; presenter registration closed 15 Jul 2026.", status:"New entry", snote:""},
 
-<tr>
-<td><strong>ASMS Winter Conference 2027</strong></td>
-<td>Mass spectrometry — lipids & lipidomics</td>
-<td>Jan 28–31, 2027</td>
-<td>Santa Fe, NM, USA</td>
-<td class="deadline">Dec 4, 2026</td>
-<td>Travel stipend deadline</td>
-<td>Student / postdoc application</td>
-<td><span class="badge open">OPEN</span></td>
-<td><a href="https://www.asms.org/conferences/winter-conference" target="_blank">Official site ↗</a></td>
-<td>Sep 3, 2026</td>
-</tr>
+  {name:"Eastern Analytical Symposium 2026", series:"EAS & Exposition", url:"https://eas.org/",
+   rel:"Low", why:"General analytical; some environmental work", place:"Plainsboro, NJ, USA", dates:"16–18 November 2026", when:"2026-11-16", fmt:"",
+   tier:1, mile:"2026-11-16", mdate:"16 Nov 2026", mtype:"Event itself — no deadline left", mnote:"Attendee registration open; call for papers closed.", status:"New entry", snote:""},
 
-<tr>
-<td><strong>ASMS Winter Conference 2027</strong></td>
-<td>Mass spectrometry — lipids & lipidomics</td>
-<td>Jan 28–31, 2027</td>
-<td>Santa Fe, NM, USA</td>
-<td class="deadline">Dec 11, 2026</td>
-<td>Abstract deadline</td>
-<td>Poster / short talk</td>
-<td><span class="badge open">OPEN</span></td>
-<td><a href="https://www.asms.org/conferences/winter-conference" target="_blank">Official site ↗</a></td>
-<td>Sep 3, 2026</td>
-</tr>
+  {name:"Great Lakes PFAS Summit 2026", series:"Michigan EGLE (+ PFAS Treatment Technology Symposium 9–10 Dec)", url:"https://www.michigan.gov/egle/outreach/conferences/pfas-summit",
+   rel:"High", why:"PFAS is the whole subject", place:"Virtual", dates:"1–3 December 2026", when:"2026-12-01", fmt:"Virtual",
+   tier:1, mile:"2026-12-01", mdate:"1 Dec 2026", mtype:"Event itself — no deadline left", mnote:"Presentation proposals closed 28 Jun 2026; registration opens 1 Oct 2026.", status:"New entry", snote:""},
 
-<tr>
-<td><strong>ASMS Winter Conference 2027</strong></td>
-<td>Mass spectrometry</td>
-<td>Jan 28–31, 2027</td>
-<td>Santa Fe, NM, USA</td>
-<td class="deadline">Dec 18, 2026</td>
-<td>Advance registration</td>
-<td>Registration</td>
-<td><span class="badge open">OPEN</span></td>
-<td><a href="https://www.asms.org/conferences/winter-conference" target="_blank">Official site ↗</a></td>
-<td>Sep 3, 2026</td>
-</tr>
+  {name:"Battelle Sediments Conference 2027", series:"Remediation & Management of Contaminated Sediments", url:"https://www.battelle.org/conferences/sediments-conference",
+   rel:"Medium", why:"Substantial PFAS / emerging-contaminant track", place:"Austin, TX, USA", dates:"25–28 January 2027", when:"2027-01-25", fmt:"",
+   tier:1, mile:"2027-01-25", mdate:"25 Jan 2027", mtype:"Event itself — no deadline left", mnote:"Abstract submission closed 29 Jun 2026; registration deadlines not yet posted.", status:"New entry", snote:""},
 
-<tr>
-<td><strong>AWWA / AMTA Membrane Technology Conference 2027</strong></td>
-<td>PFAS, microplastics, emerging contaminants & water treatment</td>
-<td>Mar 22–25, 2027</td>
-<td>Denver, CO, USA</td>
-<td class="deadline">Late Fall 2026</td>
-<td>Registration opening</td>
-<td>Registration</td>
-<td><span class="badge watch">WATCH</span><br>Abstract call closed</td>
-<td><a href="https://www.awwa.org/" target="_blank">AWWA ↗</a></td>
-<td>Sep 3, 2026</td>
-</tr>
+  {name:"Membrane Technology Conference (MTC27)", series:"AMTA / AWWA", url:"https://www.amtaorg.com/event/membrane-technology-conference-2027/",
+   rel:"Medium", why:"Membrane removal of PFAS and CECs", place:"Denver, CO, USA", dates:"22–25 March 2027", when:"2027-03-22", fmt:"",
+   tier:1, mile:"2027-03-22", mdate:"22 Mar 2027", mtype:"Event itself — no deadline left", mnote:"Abstract deadline was extended to 6 Aug 2026.", status:"Needs checking", snote:"AWWA's call-for-abstracts page lists a conflicting 8 July 2027 deadline against these dates."},
 
-<tr>
-<td><strong>75th ASMS Conference</strong></td>
-<td>Mass spectrometry & analytical instrumentation</td>
-<td>Jun 6–10, 2027</td>
-<td>Houston, TX, USA</td>
-<td class="deadline">TBD</td>
-<td>Abstract submission</td>
-<td>Scientific presentation</td>
-<td><span class="badge watch">WATCH</span></td>
-<td><a href="https://www.asms.org/conferences/annual-conference/future-annual-conferences" target="_blank">ASMS ↗</a></td>
-<td>Sep 3, 2026</td>
-</tr>
+  {name:"IWA Leading Edge Technology Conference (21st LET)", series:"International Water Association", url:"https://iwa-let.org/",
+   rel:"Medium", why:"Treatment technology for micropollutants", place:"Ghent, Belgium", dates:"24–28 May 2027", when:"2027-05-24", fmt:"",
+   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Call for papers not yet open.", status:"New entry", snote:""},
 
-<tr>
-<td><strong>HPLC 2027</strong></td>
-<td>Separation science, chromatography, MS & environmental analysis</td>
-<td>Jun 20–24, 2027</td>
-<td>Innsbruck, Austria</td>
-<td class="deadline">By end of 2026</td>
-<td>Abstract submission opens</td>
-<td>Scientific abstract</td>
-<td><span class="badge watch">WATCH</span></td>
-<td><a href="https://www.hplc2027.com/" target="_blank">Official site ↗</a></td>
-<td>Sep 3, 2026</td>
-</tr>
+  {name:"ASMS 2027 — 75th Conference on Mass Spectrometry", series:"American Society for Mass Spectrometry", url:"https://www.asms.org/conferences/annual-conference/future-annual-conferences",
+   rel:"Medium", why:"Environmental MS sessions within a huge programme", place:"Houston, TX, USA", dates:"6–10 June 2027", when:"2027-06-06", fmt:"",
+   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"For scale: the 2026 abstract deadline was 6 Feb 2026; the 2027 date is not published.", status:"New entry", snote:""},
 
-<tr>
-<td><strong>Environmental Measurement Symposium / NEMC 2027</strong></td>
-<td>Environmental measurement, analytical methods & water analysis</td>
-<td>Aug 2–6, 2027</td>
-<td>Chicago, IL, USA</td>
-<td class="deadline">TBD</td>
-<td>Call for abstracts</td>
-<td>Environmental measurement presentation</td>
-<td><span class="badge watch">WATCH</span></td>
-<td><a href="https://envirosymposium.group/" target="_blank">Official site ↗</a></td>
-<td>Sep 3, 2026</td>
-</tr>
+  {name:"Battelle BLOOM Conference 2027", series:"formerly the Bioremediation Symposium", url:"https://www.battelle.org/conferences/bioremediation-symposium",
+   rel:"Medium", why:"Remediation including emerging contaminants", place:"Austin, TX, USA", dates:"14–17 June 2027", when:"2027-06-14", fmt:"",
+   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Battelle states abstract and registration details are still to come.", status:"New entry", snote:""},
 
-<tr>
-<td><strong>ISEAC-42</strong></td>
-<td>Environmental & food analytical chemistry; microplastics</td>
-<td>Nov 30–Dec 3, 2027</td>
-<td>Amsterdam, Netherlands</td>
-<td class="deadline">TBD</td>
-<td>Important dates / abstract call</td>
-<td>Scientific abstract</td>
-<td><span class="badge watch">WATCH</span></td>
-<td><a href="https://iaeac.com/iseac-42/" target="_blank">Official site ↗</a></td>
-<td>Sep 3, 2026</td>
-</tr>
+  {name:"HPLC 2027", series:"56th Int. Symposium on High Performance Liquid Phase Separations", url:"https://www.hplc2027.com/",
+   rel:"Medium", why:"Environmental separations is a listed topic", place:"Innsbruck, Austria", dates:"20–24 June 2027", when:"2027-06-20", fmt:"",
+   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Abstract and registration portal opens by the end of 2026.", status:"New entry", snote:""},
 
-</tbody>
-</table>
+  {name:"AOMSC 2027", series:"11th Asia Oceania Mass Spectrometry Conference", url:"https://www.aomsc2027.org/conference-information/",
+   rel:"Medium", why:"MS across fields; environmental sessions", place:"Taipei, Taiwan", dates:"28 June – 1 July 2027", when:"2027-06-28", fmt:"",
+   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"", status:"New entry", snote:""},
 
-</div>
+  {name:"Environmental Measurement Symposium 2027 (NEMC)", series:"National Environmental Monitoring Conference", url:"https://envirosymposium.group/",
+   rel:"High", why:"Environmental measurement methods core", place:"Chicago, IL, USA", dates:"2–6 August 2027", when:"2027-08-02", fmt:"",
+   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"For scale: the 2026 abstract deadline was 6 Feb 2026.", status:"New entry", snote:""},
 
-<footer>
-Conference information is monitored from official organizer and professional-society sources.
-Always verify critical submission deadlines with the linked conference organizer before submission.
-</footer>
+  {name:"ACS Fall 2027", series:"American Chemical Society national meeting", url:"https://acsenvr.com/events/",
+   rel:"Medium", why:"ENVR and ANYL division sessions", place:"San Diego, CA, USA", dates:"22–26 August 2027", when:"2027-08-22", fmt:"Hybrid",
+   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"ACS calls for abstracts typically open about six months ahead.", status:"New entry", snote:""},
 
-</div>
+  {name:"SETAC Latin America 17th Biennial Meeting", series:"Society of Environmental Toxicology and Chemistry", url:"https://www.setac.org/discover-events/global-meetings.html",
+   rel:"High", why:"Environmental chemistry is the subject", place:"Medellín, Colombia", dates:"14–17 September 2027", when:"2027-09-14", fmt:"",
+   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"", status:"New entry", snote:""},
 
+  {name:"SETAC Africa 13th Biennial Meeting", series:"Society of Environmental Toxicology and Chemistry", url:"https://www.setac.org/discover-events/global-meetings.html",
+   rel:"High", why:"Environmental chemistry is the subject", place:"Dar es Salaam, Tanzania", dates:"26–30 September 2027", when:"2027-09-26", fmt:"",
+   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"", status:"New entry", snote:""},
+
+  {name:"ICNTS 27 — Int. Conference on Non-Target Screening", series:"AFIN-TS", url:"https://afin-ts.de/icnts27/",
+   rel:"High", why:"Non-target environmental screening core", place:"Erding, Germany", dates:"18–21 October 2027", when:"2027-10-18", fmt:"Hybrid",
+   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Registration details expected winter 2026. Attend in person or online; recordings run to end-2027.", status:"New entry", snote:""},
+
+  {name:"SETAC North America 48th Annual Meeting", series:"Society of Environmental Toxicology and Chemistry", url:"https://www.setac.org/discover-events/global-meetings.html",
+   rel:"High", why:"Environmental chemistry is the subject", place:"Long Beach, CA, USA", dates:"1–4 November 2027", when:"2027-11-01", fmt:"",
+   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"", status:"New entry", snote:""},
+
+  {name:"ISEAC-42", series:"Int. Symposium on Environmental & Analytical Chemistry (IAEAC)", url:"https://iaeac.com/iseac-42/",
+   rel:"High", why:"Environmental analytical chemistry core", place:"Amsterdam, Netherlands", dates:"30 November – 3 December 2027", when:"2027-11-30", fmt:"",
+   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"", status:"New entry", snote:""},
+
+  {name:"Emerging Contaminants in the Environment Conference", series:"Illinois Sustainable Technology Center / IISG", url:"https://publish.illinois.edu/emerging-contaminants-conference/",
+   rel:"High", why:"Emerging contaminants are the subject", place:"Virtual", dates:"2027 — dates not announced", when:"2027-12-31", fmt:"Virtual",
+   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Organisers state the series runs virtually in odd years and in person (Champaign, IL) in even years.", status:"Needs checking", snote:"No 2027 dates published yet; format stated but unscheduled."}
+];
+
+// Region follows the physical location, so hybrid meetings sit in their host region.
+// Virtual-only meetings are grouped separately rather than forced onto a map.
+const REGION_BY_COUNTRY = {
+  "USA":"North America", "Canada":"North America",
+  "Colombia":"Latin America",
+  "UK":"Europe", "Spain":"Europe", "Switzerland":"Europe", "Italy":"Europe",
+  "Belgium":"Europe", "Austria":"Europe", "Germany":"Europe", "Netherlands":"Europe",
+  "Tanzania":"Africa",
+  "Japan":"APAC", "Taiwan":"APAC",
+  "Australia":"Australia",
+  "Virtual":"Virtual"
+};
+
+const REL_ORDER = {High:0, Medium:1, Low:2};
+const REGION_ORDER = {"North America":0,"Latin America":1,"Europe":2,"Africa":3,"APAC":4,"Australia":5,"Virtual":6,"Unassigned":7};
+const rowsEl = document.getElementById("rows");
+const emptyEl = document.getElementById("empty");
+const shownEl = document.getElementById("shown");
+document.getElementById("total").textContent = DATA.length;
+
+let sortKey = "mile";
+let sortDir = 1;
+let relFilter = "all";
+let regionFilter = "all";
+let query = "";
+
+function esc(s){return String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+
+function keyOf(d){
+  switch(sortKey){
+    case "name": return d.name.toLowerCase();
+    case "rel": return String(REL_ORDER[d.rel]) + "|" + d.mileSort;
+    case "when": return String(REGION_ORDER[d.region]) + "|" + d.when;
+    case "status": return (d.status === "Needs checking" ? "0" : "1") + "|" + d.mileSort;
+    default: return d.mileSort;
+  }
+}
+
+DATA.forEach(d => {
+  // tier keeps live deadlines on top, event-only next, unannounced last
+  d.mileSort = d.tier + "|" + (d.mile || d.when || "9999-12-31");
+  d.region = REGION_BY_COUNTRY[d.place.split(", ").pop()] || "Unassigned";
+  d.hay = (d.name + " " + d.series + " " + d.place + " " + d.region + " " + d.why).toLowerCase();
+});
+
+function render(){
+  const list = DATA
+    .filter(d => relFilter === "all" || d.rel === relFilter)
+    .filter(d => regionFilter === "all" || d.region === regionFilter)
+    .filter(d => !query || d.hay.includes(query))
+    .sort((a,b) => {
+      const ka = keyOf(a), kb = keyOf(b);
+      if(ka < kb) return -1 * sortDir;
+      if(ka > kb) return 1 * sortDir;
+      return a.name.localeCompare(b.name);
+    });
+
+  shownEl.textContent = list.length;
+  emptyEl.hidden = list.length > 0;
+
+  rowsEl.innerHTML = list.map(d => `
+    <tr>
+      <td class="c-name conf" data-label="Conference">
+        <a href="${esc(d.url)}" target="_blank" rel="noopener">${esc(d.name)}</a>
+        <span class="series">${esc(d.series)}</span>
+      </td>
+      <td class="c-rel" data-label="Relevance">
+        <span class="badge b-${d.rel}">${d.rel}</span>
+        <span class="why">${esc(d.why)}</span>
+      </td>
+      <td class="c-when" data-label="Dates / location">
+        <span class="place">${esc(d.place)}</span>
+        <span class="dates">${esc(d.dates)}</span>
+        <span class="tags">
+          <span class="region${d.region === "Unassigned" ? " unassigned" : ""}">${esc(d.region)}</span>
+          ${d.fmt ? `<span class="fmt ${d.fmt.toLowerCase()}">${esc(d.fmt)}</span>` : ""}
+        </span>
+      </td>
+      <td class="c-mile" data-label="Next milestone">
+        <span class="mdate${d.tier === 2 ? " none" : ""}">${esc(d.mdate)}</span>
+        ${d.mtype ? `<span class="mtype">${esc(d.mtype)}</span>` : ""}
+        ${d.mnote ? `<span class="mnote">${esc(d.mnote)}</span>` : ""}
+      </td>
+      <td class="c-status" data-label="Status / update">
+        <span class="status${d.status === "Needs checking" ? " check" : ""}">${esc(d.status)}</span>
+        ${d.snote ? `<span class="status"><span class="snote">${esc(d.snote)}</span></span>` : ""}
+      </td>
+    </tr>`).join("");
+}
+
+document.querySelectorAll("thead button[data-sort]").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const k = btn.dataset.sort;
+    if(sortKey === k){ sortDir *= -1; } else { sortKey = k; sortDir = 1; }
+    document.querySelectorAll("thead th").forEach(th => th.removeAttribute("aria-sort"));
+    btn.closest("th").setAttribute("aria-sort", sortDir === 1 ? "ascending" : "descending");
+    btn.querySelector(".arrow").textContent = sortDir === 1 ? "▲" : "▼";
+    render();
+  });
+});
+
+document.querySelectorAll(".chip[data-rel]").forEach(chip => {
+  chip.addEventListener("click", () => {
+    relFilter = chip.dataset.rel;
+    document.querySelectorAll(".chip[data-rel]").forEach(c => c.setAttribute("aria-pressed", String(c === chip)));
+    render();
+  });
+});
+
+document.querySelectorAll(".chip[data-region]").forEach(chip => {
+  chip.addEventListener("click", () => {
+    regionFilter = chip.dataset.region;
+    document.querySelectorAll(".chip[data-region]").forEach(c => c.setAttribute("aria-pressed", String(c === chip)));
+    render();
+  });
+});
+
+document.getElementById("q").addEventListener("input", e => {
+  query = e.target.value.trim().toLowerCase();
+  render();
+});
+
+render();
+</script>
 </body>
 </html>
