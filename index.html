@@ -4,14 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Environmental Chemistry Conference Radar</title>
-<meta name="description" content="Verified meetings and deadlines across environmental chemistry, water quality, PFAS, microplastics, analytical instrumentation and mass spectrometry.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<meta name="description" content="Conference deadlines in environmental chemistry, water quality, PFAS, microplastics and mass spectrometry.">
 <style>
-  :root{color-scheme:light}
-  img{max-width:100%}
-  [hidden]:not([hidden=until-found i]){display:none!important}
   :root{
     --ground:#EFF2F1;
     --surface:#FFFFFF;
@@ -81,7 +75,6 @@
 
   *{box-sizing:border-box}
   body{
-    margin:0;
     background:var(--ground);
     color:var(--ink);
     font-family:"IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -267,19 +260,19 @@
     .count{margin-left:0}
   }
 </style>
+
 </head>
 <body>
-
 <div class="wrap">
 
   <header class="masthead">
     <div class="eyebrow">Environmental chemistry · water · PFAS · microplastics · MS</div>
     <h1>Conference Radar</h1>
-    <p class="standfirst">Verified meetings and deadlines across environmental chemistry, water quality, PFAS, microplastics, analytical instrumentation and mass spectrometry — every event or deadline falling between now and early 2028. Each name links to the source that was checked.</p>
+    <p class="standfirst">Verified meetings and deadlines across environmental chemistry, water quality, PFAS, microplastics, analytical instrumentation and mass spectrometry — every event or deadline falling between now and April 2028. Each name links to the source that was checked.</p>
     <div class="stamp">
-      <span>Last updated <b>22 September 2026</b></span>
+      <span>Last updated <b>4 October 2026</b></span>
       <span><b id="total">0</b> events tracked</span>
-      <span>Window: <b>Sep 2026 – Jan 2028</b></span>
+      <span>Window: <b>Oct 2026 – Apr 2028</b></span>
     </div>
   </header>
 
@@ -345,277 +338,159 @@
 <script>
 // tier 0 = live deadline · 1 = only the event remains · 2 = nothing announced
 const DATA = [
-  {name:"AWWA Annual Conference & Exposition (ACE27)", series:"American Water Works Association", url:"https://ace.awwa.org/",
-   rel:"Medium", why:"Water-quality track among utility topics", place:"San Diego, CA, USA", dates:"13–16 June 2027", when:"2027-06-13", fmt:"",
-   tier:0, mile:"2026-09-24", mdate:"24 Sep 2026", mtype:"Abstract submission (extended)", mnote:"Deadline extended from 10 Sep 2026.", status:"Deadline extended to 24 Sep 2026", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"SETAC North America 47th Annual Meeting", series:"Society of Environmental Toxicology and Chemistry", url:"https://www.setac.org/discover-events/global-meetings/setac-north-america-47th-annual-meeting.html",
-   rel:"High", why:"Environmental chemistry is the subject", place:"Montreal, Canada", dates:"2–5 November 2026", when:"2026-11-02", fmt:"Hybrid",
-   tier:0, mile:"2026-10-14", mdate:"14 Oct 2026", mtype:"Late-breaking abstract submission", mnote:"US$50 fee. Early-bird registration deadline (16 Sep 2026) has passed.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"Ozwater'27", series:"Australian Water Association", url:"https://www.ozwater.org/program/call-for-papers/submission-guide",
-   rel:"Medium", why:"Water quality within utility programme", place:"Sydney, Australia", dates:"4–6 May 2027", when:"2027-05-04", fmt:"",
-   tier:0, mile:"2027-02-22", mdate:"22 Feb 2027", mtype:"Full paper submission", mnote:"Abstract/paper call closed 18 Sep 2026.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"RemTEC & Emerging Contaminants Summit", series:"BNP Media / Remediation Technology", url:"https://www.remediation-technology.com/remtecsummit/submit-abstract",
-   rel:"High", why:"PFAS and emerging contaminants core", place:"Rosemont, IL, USA", dates:"13–15 April 2027", when:"2027-04-13", fmt:"",
-   tier:1, mile:"2027-04-13", mdate:"13 Apr 2027", mtype:"Event itself — no deadline left", mnote:"Abstract submission deadline (21 Sep 2026) has closed; no further submission or registration deadline published yet.", status:"Deadline passed — event only", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"ACS Spring 2027", series:"American Chemical Society national meeting", url:"https://callforabstracts.acs.org/acsspring2027",
-   rel:"Medium", why:"ENVR and ANYL division sessions", place:"New Orleans, LA, USA", dates:"21–25 March 2027", when:"2027-03-21", fmt:"Hybrid",
-   tier:0, mile:"2026-09-28", mdate:"28 Sep 2026", mtype:"Abstract submission", mnote:"Deadline is 23:59 EST. Dates and city confirmed via the ACS Environmental Chemistry Division.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"Pittcon 2027", series:"Pittsburgh Conference on Analytical Chemistry", url:"https://pittcon.org/conference/call-for-submissions/",
-   rel:"Medium", why:"Dedicated Environmental & Energy track", place:"Pittsburgh, PA, USA", dates:"24–28 April 2027", when:"2027-04-24", fmt:"",
-   tier:0, mile:"2026-09-28", mdate:"28 Sep 2026", mtype:"Oral abstract submission", mnote:"Posters close 15 Oct 2026; undergraduate posters 20 Nov 2026.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"7th ICRAPHE / 22nd HRMS & LC-MS/MS Workshop", series:"Pharmaceuticals in the environment · environmental HRMS", url:"https://icraphe-hrms.activacongresos.com/important-dates/",
-   rel:"High", why:"Environmental HRMS is the subject", place:"Barcelona, Spain", dates:"9–11 November 2026", when:"2026-11-09", fmt:"",
-   tier:0, mile:"2026-10-02", mdate:"2 Oct 2026", mtype:"Last-minute poster abstracts", mnote:"Main abstract deadline was 24 Jul 2026; early-bird closed 7 Aug 2026.", status:"No change", snote:"Official important-dates page again timed out on automated fetch — not confirmed dead. Dates re-corroborated this run via an independent third-party programme PDF (seqa.es).", vdate:"22 Sep 2026"},
-
-  {name:"AWWA Water Quality Technology Conference (WQTC26)", series:"American Water Works Association", url:"https://www.awwa.org/event/water-quality-technology/",
-   rel:"High", why:"Drinking-water quality and CECs core", place:"Memphis, TN, USA", dates:"15–19 November 2026", when:"2026-11-15", fmt:"",
-   tier:0, mile:"2026-10-23", mdate:"23 Oct 2026", mtype:"Early-bird registration", mnote:"Hotel block also closes 23 Oct 2026.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"SETAC Europe 37th Annual Meeting", series:"Society of Environmental Toxicology and Chemistry", url:"https://www.setac.org/discover-events/global-meetings/setac-europe-37th-annual-meeting.html",
-   rel:"High", why:"Environmental chemistry is the subject", place:"Geneva, Switzerland", dates:"25–29 April 2027", when:"2027-04-25", fmt:"",
-   tier:0, mile:"2026-11-10", mdate:"10 Nov 2026", mtype:"Abstract submission", mnote:"Training-course proposals close 14 Oct 2026; student grants 17 Nov 2026.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"GRC — Water Disinfection, Byproducts & Health", series:"Gordon Research Conference (+ GRS 31 Jul–1 Aug)", url:"https://www.grc.org/water-disinfection-byproducts-and-health-conference/2027/",
-   rel:"High", why:"Water treatment chemistry core", place:"South Hadley, MA, USA", dates:"1–6 August 2027", when:"2027-08-01", fmt:"",
-   tier:0, mile:"2027-07-04", mdate:"4 Jul 2027", mtype:"Application deadline", mnote:"GRC admits by application, not open registration; the seminar needs a separate application.", status:"No change", snote:"Official grc.org page could not be fetched this run (network/robots block); secondary sources found no contradicting information.", vdate:"10 Sep 2026"},
-
-  {name:"SETAC Asia-Pacific 15th Biennial Meeting", series:"Society of Environmental Toxicology and Chemistry", url:"https://www.setac.org/discover-events/global-meetings/setac-asia-pacific-15th-biennial-meeting/registration.html",
-   rel:"High", why:"Environmental chemistry is the subject", place:"Tsukuba, Japan", dates:"20–23 September 2026", when:"2026-09-20", fmt:"",
-   tier:1, mile:"2026-09-20", mdate:"20 Sep 2026", mtype:"Event itself — no deadline left", mnote:"Early-bird registration closed 27 Jul 2026.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"WEFTEC 2026", series:"Water Environment Federation", url:"https://www.weftec.org/",
-   rel:"Medium", why:"Wastewater PFAS and micropollutant sessions", place:"New Orleans, LA, USA", dates:"26–30 September 2026", when:"2026-09-26", fmt:"",
-   tier:1, mile:"2026-09-26", mdate:"26 Sep 2026", mtype:"Event itself — no deadline left", mnote:"WEFTEC 2027 abstract portal not yet open; site states submissions will open October 2026, closing date not yet announced.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"SciX 2026", series:"Federation of Analytical Chemistry & Spectroscopy Societies", url:"https://scixconference.org/",
-   rel:"Medium", why:"Analytical instrumentation breadth", place:"Sparks / Reno, NV, USA", dates:"4–9 October 2026", when:"2026-10-04", fmt:"",
-   tier:1, mile:"2026-10-04", mdate:"4 Oct 2026", mtype:"Event itself — no deadline left", mnote:"Late-breaking submissions closed 26 Jun 2026.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"IWA World Water Congress & Exhibition 2026", series:"International Water Association", url:"https://worldwatercongress.org/",
-   rel:"Medium", why:"Water quality within a broad programme", place:"Glasgow, UK", dates:"4–8 October 2026", when:"2026-10-04", fmt:"",
-   tier:1, mile:"2026-10-04", mdate:"4 Oct 2026", mtype:"Event itself — no deadline left", mnote:"Next editions: Kuching, Malaysia (2028) and São Paulo, Brazil (2030); dates unannounced.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"ISES 2026 Annual Meeting", series:"International Society of Exposure Science", url:"https://www.intlexposurescience.org/ises-2026-annual-meeting/",
-   rel:"Medium", why:"Exposure science; PFAS and analysis sessions", place:"Vancouver, Canada", dates:"4–8 October 2026", when:"2026-10-04", fmt:"",
-   tier:1, mile:"2026-10-04", mdate:"4 Oct 2026", mtype:"Event itself — closing date unpublished", mnote:"Regular abstracts closed; a late-breaking window opened in early August 2026 and remains open-ended with no stated closing date.", status:"No change", snote:"Late-breaking deadline still not published on the official page.", vdate:"22 Sep 2026"},
-
-  {name:"MICRO 2026 — Plastic Pollution from MACRO to nano", series:"MICRO international conference series", url:"https://micro2026.sciencesconf.org/",
-   rel:"High", why:"Microplastics is the whole subject", place:"Cádiz, Spain", dates:"12–16 October 2026", when:"2026-10-12", fmt:"",
-   tier:1, mile:"2026-10-12", mdate:"12 Oct 2026", mtype:"Event itself — no deadline left", mnote:"Final abstract-detail adjustment deadline (16 Sep 2026) has passed; no further deadlines remain. Final programme expected ~1 Oct 2026.", status:"Deadline passed — event only", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"Eastern Analytical Symposium 2026", series:"EAS & Exposition", url:"https://eas.org/",
-   rel:"Low", why:"General analytical; some environmental work", place:"Plainsboro, NJ, USA", dates:"16–18 November 2026", when:"2026-11-16", fmt:"",
-   tier:1, mile:"2026-11-16", mdate:"16 Nov 2026", mtype:"Event itself — no deadline left", mnote:"Attendee registration open; call for papers closed.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"Great Lakes PFAS Summit 2026", series:"Michigan EGLE (+ PFAS Treatment Technology Symposium 9–10 Dec)", url:"https://www.michigan.gov/egle/outreach/conferences/pfas-summit",
-   rel:"High", why:"PFAS is the whole subject", place:"Virtual", dates:"1–3 December 2026", when:"2026-12-01", fmt:"Virtual",
-   tier:1, mile:"2026-12-01", mdate:"1 Dec 2026", mtype:"Event itself — no deadline left", mnote:"Presentation proposals closed 28 Jun 2026; registration opens 1 Oct 2026.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"Battelle Sediments Conference 2027", series:"Remediation & Management of Contaminated Sediments", url:"https://www.battelle.org/conferences/sediments-conference",
-   rel:"Medium", why:"Substantial PFAS / emerging-contaminant track", place:"Austin, TX, USA", dates:"25–28 January 2027", when:"2027-01-25", fmt:"",
-   tier:0, mile:"2026-11-13", mdate:"13 Nov 2026", mtype:"Early-bird registration", mnote:"Abstract submission closed 29 Jun 2026. Early-bird registration closes 13 Nov 2026 (full refund cutoff same date; 50% refund through 17 Dec 2026, none after 18 Dec 2026).", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"Membrane Technology Conference (MTC27)", series:"AMTA / AWWA", url:"https://www.amtaorg.com/event/membrane-technology-conference-2027/",
-   rel:"Medium", why:"Membrane removal of PFAS and CECs", place:"Denver, CO, USA", dates:"22–25 March 2027", when:"2027-03-22", fmt:"",
-   tier:1, mile:"2027-03-22", mdate:"22 Mar 2027", mtype:"Event itself — no deadline left", mnote:"Call for abstracts closed 6 Aug 2026 (extended from 23 Jul 2026); notifications expected late Oct 2026. AWWA's generic call-for-abstracts listing page shows a conflicting 8 Jul 2027 date — cross-checked against the dedicated AMTA/AWWA event pages and trade press, which confirm 2026 is correct; the 2027 figure on that page appears to be a stale template entry.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"IWA Leading Edge Technology Conference (21st LET)", series:"International Water Association", url:"https://iwa-let.org/",
-   rel:"Medium", why:"Treatment technology for micropollutants", place:"Ghent, Belgium", dates:"24–28 May 2027", when:"2027-05-24", fmt:"",
-   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Call for papers not yet open.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"ASMS 2027 — 75th Conference on Mass Spectrometry", series:"American Society for Mass Spectrometry", url:"https://www.asms.org/conferences/annual-conference/future-annual-conferences",
-   rel:"Medium", why:"Environmental MS sessions within a huge programme", place:"Houston, TX, USA", dates:"6–10 June 2027", when:"2027-06-06", fmt:"",
-   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"For scale: the 2026 abstract deadline was 6 Feb 2026; the 2027 date is not published.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"Battelle BLOOM Conference 2027", series:"formerly the Bioremediation Symposium", url:"https://www.battelle.org/conferences/bloom-conference",
-   rel:"Medium", why:"Remediation including emerging contaminants", place:"Austin, TX, USA", dates:"14–17 June 2027", when:"2027-06-14", fmt:"",
-   tier:0, mile:"2026-11-16", mdate:"16 Nov 2026", mtype:"Abstract submission", mnote:"Formally rebranded from the Bioremediation Symposium to the BLOOM Conference (per a Battelle press release).", status:"Deadline now announced: abstract submission due 16 Nov 2026", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"HPLC 2027", series:"56th Int. Symposium on High Performance Liquid Phase Separations", url:"https://www.hplc2027.com/",
-   rel:"Medium", why:"Environmental separations is a listed topic", place:"Innsbruck, Austria", dates:"20–24 June 2027", when:"2027-06-20", fmt:"",
-   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Abstract and registration portal opens by the end of 2026.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"AOMSC 2027", series:"11th Asia Oceania Mass Spectrometry Conference", url:"https://www.aomsc2027.org/conference-information/",
-   rel:"Medium", why:"MS across fields; environmental sessions", place:"Taipei, Taiwan", dates:"28 June – 1 July 2027", when:"2027-06-28", fmt:"",
-   tier:0, mile:"2027-02-15", mdate:"Mid-Feb 2027", mtype:"Abstract submission (est.)", mnote:"Call for abstracts opens early Dec 2026; the official site states the abstract deadline only as 'mid-February 2027', no exact day yet. Registration opens 6 Jan 2027; early-bird registration due 21 Apr 2027.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"Environmental Measurement Symposium 2027 (NEMC)", series:"National Environmental Monitoring Conference", url:"https://envirosymposium.group/",
-   rel:"High", why:"Environmental measurement methods core", place:"Chicago, IL, USA", dates:"2–6 August 2027", when:"2027-08-02", fmt:"",
-   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"For scale: the 2026 abstract deadline was 6 Feb 2026.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"ACS Fall 2027", series:"American Chemical Society national meeting", url:"https://acsenvr.com/events/",
-   rel:"Medium", why:"ENVR and ANYL division sessions", place:"San Diego, CA, USA", dates:"22–26 August 2027", when:"2027-08-22", fmt:"Hybrid",
-   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"ACS calls for abstracts typically open about six months ahead; callforabstracts.acs.org/acsfall2027 is not yet live.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"SETAC Latin America 17th Biennial Meeting", series:"Society of Environmental Toxicology and Chemistry", url:"https://www.setac.org/discover-events/global-meetings.html",
-   rel:"High", why:"Environmental chemistry is the subject", place:"Medellín, Colombia", dates:"14–17 September 2027", when:"2027-09-14", fmt:"",
-   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"SETAC Africa 13th Biennial Meeting", series:"Society of Environmental Toxicology and Chemistry", url:"https://www.setac.org/discover-events/global-meetings.html",
-   rel:"High", why:"Environmental chemistry is the subject", place:"Dar es Salaam, Tanzania", dates:"26–30 September 2027", when:"2027-09-26", fmt:"",
-   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"ICNTS 27 — Int. Conference on Non-Target Screening", series:"AFIN-TS", url:"https://afin-ts.de/icnts27/",
-   rel:"High", why:"Non-target environmental screening core", place:"Erding, Germany", dates:"18–21 October 2027", when:"2027-10-18", fmt:"Hybrid",
-   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Registration details expected winter 2026. Attend in person or online; recordings run to end-2027.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"SETAC North America 48th Annual Meeting", series:"Society of Environmental Toxicology and Chemistry", url:"https://www.setac.org/discover-events/ems-event-calendar/setac-north-america-48th-annual-meeting.html",
-   rel:"High", why:"Environmental chemistry is the subject", place:"Long Beach, CA, USA", dates:"31 October – 4 November 2027", when:"2027-10-31", fmt:"",
-   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Booking not yet open; no abstract or registration deadlines posted.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"ISEAC-42", series:"Int. Symposium on Environmental & Analytical Chemistry (IAEAC)", url:"https://iaeac.com/iseac-42/",
-   rel:"High", why:"Environmental analytical chemistry core", place:"Amsterdam, Netherlands", dates:"30 November – 3 December 2027", when:"2027-11-30", fmt:"",
-   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Official page marks important dates 'coming soon'.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"Emerging Contaminants in the Environment Conference (ECEC27)", series:"Illinois Sustainable Technology Center / IISG", url:"https://publish.illinois.edu/emerging-contaminants-conference/",
-   rel:"High", why:"Emerging contaminants are the subject", place:"Virtual", dates:"20–21 April 2027", when:"2027-04-20", fmt:"Virtual",
-   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Series runs fully virtual in odd years (2027, 2029, 2031…) and in person (Champaign, IL) in even years. Abstract and registration details not yet posted.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"The Science of PFAS Conference 2026", series:"Air & Waste Management Association (A&WMA)", url:"https://www.awma.org/pfas",
-   rel:"High", why:"PFAS is the whole subject", place:"Durham, NC, USA", dates:"22–24 September 2026", when:"2026-09-22", fmt:"",
-   tier:1, mile:"2026-09-22", mdate:"22 Sep 2026", mtype:"Event itself — no deadline left", mnote:"No submission deadlines published; programme last updated 31 Aug 2026.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"AEHS Foundation East Coast Conference — Soils, Sediments, Water & Energy (42nd)", series:"Association for Environmental Health and Sciences Foundation", url:"https://www.aehsfoundation.org/eastcoast",
-   rel:"High", why:"PFAS and contaminated-site remediation core", place:"Amherst, MA, USA", dates:"19–22 October 2026", when:"2026-10-19", fmt:"",
-   tier:1, mile:"2026-10-19", mdate:"19 Oct 2026", mtype:"Event itself — rolling call for abstracts", mnote:"Call for abstracts is open with no fixed closing date published.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"PFAS Treatment USA 2026", series:"IQ International / Water Infra IQ Hub (3rd annual)", url:"https://www.pfas-summit.com/",
-   rel:"High", why:"PFAS treatment in drinking water and wastewater is the whole subject", place:"Anaheim, CA, USA", dates:"28–29 October 2026", when:"2026-10-28", fmt:"",
-   tier:1, mile:"2026-10-28", mdate:"28 Oct 2026", mtype:"Event itself — no deadline left", mnote:"No submission deadlines published.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"AEHS Foundation West Coast Conference — Soil, Water, Energy & Air (36th)", series:"Association for Environmental Health and Sciences Foundation", url:"https://www.aehsfoundation.org/westcoast",
-   rel:"High", why:"PFAS and contaminated-site remediation core", place:"San Diego, CA, USA", dates:"15–18 March 2027", when:"2027-03-15", fmt:"",
-   tier:1, mile:"2027-03-15", mdate:"15 Mar 2027", mtype:"Event itself — no deadline left", mnote:"Abstract submission deadline was 17 Jul 2026 (already closed).", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"PFAS Treatment Australia 2027", series:"IQ International (3rd annual)", url:"https://www.australia.pfas-summit.com/",
-   rel:"High", why:"PFAS treatment and remediation for water utilities is the whole subject", place:"Melbourne, Australia", dates:"24–25 March 2027", when:"2027-03-24", fmt:"",
-   tier:1, mile:"2027-03-24", mdate:"24 Mar 2027", mtype:"Event itself — no deadline left", mnote:"No submission deadlines published.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"PFAS Treatment Europe 2027", series:"IQ International / Water Infra IQ Hub (5th annual)", url:"https://www.europe.pfas-summit.com/",
-   rel:"High", why:"PFAS removal and EU compliance for water utilities is the whole subject", place:"Amsterdam, Netherlands", dates:"12–13 April 2027", when:"2027-04-12", fmt:"",
-   tier:1, mile:"2027-04-12", mdate:"12 Apr 2027", mtype:"Event itself — no deadline left", mnote:"No submission deadlines published.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"PFAS Remediation Xchange USA 2027", series:"Thought Xchange Network", url:"https://us.pfasxchange.com/",
-   rel:"High", why:"PFAS remediation technology deployment is the whole subject", place:"Los Angeles, CA, USA", dates:"12 May 2027", when:"2027-05-12", fmt:"",
-   tier:1, mile:"2027-05-12", mdate:"12 May 2027", mtype:"Event itself — no deadline left", mnote:"'Super early bird' pricing currently active; no stated end date.", status:"No change", snote:"Official site blocks automated fetches (robots.txt); confirmed via search snippets only — no evidence of cancellation or date change.", vdate:"22 Sep 2026"},
-
-  {name:"Norwegian Environmental Chemistry Symposium (NECS) 2027", series:"Norwegian Chemical Society — Division for Analytical Chemistry", url:"https://www.envirochem.no/",
-   rel:"High", why:"Environmental chemistry is the whole subject", place:"Sommarøy (Tromsø), Norway", dates:"23–26 May 2027", when:"2027-05-23", fmt:"",
-   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Site last updated Mar 2026; deadlines not yet posted.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"ALGA & WasteMINZ 2027 Conference", series:"Australasian Land & Groundwater Association + WasteMINZ", url:"https://landandgroundwater.com/events/alga-and-wasteminz-joint-conference2027/",
-   rel:"Medium", why:"Contaminated land/groundwater track with prominent PFAS content, within a broader waste & resource-recovery programme", place:"Hamilton, New Zealand", dates:"24–27 May 2027", when:"2027-05-24", fmt:"",
-   tier:0, mile:"2027-02-11", mdate:"11 Feb 2027", mtype:"Abstract submission", mnote:"Abstract submission opens 26 Nov 2026, closes 11 Feb 2027. Registration: Super Saver 4 Feb–8 Apr 2027; Early Bird 9 Apr–6 May 2027; preliminary programme 25 Mar 2027.", status:"Deadline now announced: abstract submission due 11 Feb 2027", snote:"", vdate:"10 Sep 2026"},
-
-  {name:"WaterMicro 2027", series:"International Water Association", url:"https://www.watermicro2027.com/",
-   rel:"Medium", why:"Water safety/microbial quality is the core theme; chemical contaminants such as PFAS are an adjacent track", place:"San José, Costa Rica", dates:"30 May – 3 June 2027", when:"2027-05-30", fmt:"",
-   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"'Important dates' section on the official site is not yet populated (dedicated /abstracts page currently 404s).", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"PFAS Forum VII & 32nd Florida Remediation Conference", series:"PFAS Forum", url:"https://pfasforum.org/",
-   rel:"High", why:"PFAS is an explicit focus alongside general remediation", place:"Orlando, FL, USA", dates:"27–29 October 2027", when:"2027-10-27", fmt:"Hybrid",
-   tier:1, mile:"2027-10-27", mdate:"27 Oct 2027", mtype:"Event itself — rolling call for abstracts", mnote:"Call for abstracts open via online form; no fixed closing date published.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"ecoforum 2027", series:"Australasian Land & Groundwater Association", url:"https://landandgroundwater.com/events/ecoforum-2027/",
-   rel:"Medium", why:"Contaminated land/groundwater industry event with strong PFAS presence, within a broader environmental scope", place:"Sydney, Australia", dates:"9–11 November 2027", when:"2027-11-09", fmt:"",
-   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Organisers state details will be released late 2026.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"CSF 2027 — Chemistry for a Sustainable Future", series:"International conference, Prague Congress Centre", url:"https://www.csf2027.com/",
-   rel:"Medium", why:"Water remediation is one of eight parallel tracks in a broader sustainability-chemistry programme", place:"Prague, Czech Republic", dates:"15–19 September 2027", when:"2027-09-15", fmt:"",
-   tier:0, mile:"2027-02-26", mdate:"26 Feb 2027", mtype:"Abstract submission (oral)", mnote:"Acceptance notifications 16 Apr 2027; poster abstracts 11 Jun 2027; early-bird registration 14 May 2027; presenter registration 30 Jul 2027; standard registration 27 Aug 2027.", status:"No change", snote:"Official site (csf2027.com) could not be fetched this run (network/robots block); no contradicting information found via search.", vdate:"10 Sep 2026"},
-
-  {name:"ISFC 2027 / ISoFT'27 — 25th International Symposium on Fluorine Chemistry", series:"Joint with fluorous-technologies symposium ISoFT", url:"https://isfc2027.com/",
-   rel:"Low", why:"General fluorine chemistry; PFAS environmental fate is only an occasional topic", place:"Strasbourg, France", dates:"25–30 July 2027", when:"2027-07-25", fmt:"",
-   tier:0, mile:"2027-03-30", mdate:"30 Mar 2027", mtype:"Abstract submission", mnote:"Call for abstracts opens 1 Oct 2026. Early registration window 1 Oct 2026–30 Apr 2027; regular registration 1 May–18 Jun 2027.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"Great Lakes Microplastics Summit 2026", series:"Michigan Dept. of Environment, Great Lakes, and Energy (EGLE)", url:"https://www.michigan.gov/egle/outreach/conferences/great-lakes-microplastics",
-   rel:"High", why:"Microplastics is the whole subject", place:"Virtual", dates:"7–8 October 2026", when:"2026-10-07", fmt:"Virtual",
-   tier:1, mile:"2026-10-07", mdate:"7 Oct 2026", mtype:"Event itself — no deadline left", mnote:"Registration is free and open; no separate abstract deadline published.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"EuroAnalysis 2027 (XXIII EuroAnalysis)", series:"Croatian Chemical Society, for EuChemS Division of Analytical Chemistry", url:"https://euroanalysis2027.hkd.hr/",
-   rel:"High", why:"Flagship pan-European analytical chemistry congress, with environmental analysis a major theme", place:"Dubrovnik, Croatia", dates:"5–9 September 2027", when:"2027-09-05", fmt:"",
-   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Official site states further details are 'coming soon.'", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"EWCPS 2027 — 21st European Winter Conference on Plasma Spectrochemistry", series:"University of Crete / international scientific committee", url:"https://ewcps2027.gr/",
-   rel:"High", why:"Plasma-based elemental/trace analysis (ICP-MS etc.) with an explicit environmental-science track", place:"Athens, Greece", dates:"7–12 February 2027", when:"2027-02-07", fmt:"",
-   tier:0, mile:"2026-09-30", mdate:"30 Sep 2026", mtype:"Early-bird registration", mnote:"Abstract deadline (extended to 11 Sep 2026) and author notification (22 Sep 2026) have both passed. Late registration 29 Jan 2027.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"DGMS 2027 — 58th Annual Conference of the German Society for Mass Spectrometry", series:"Deutsche Gesellschaft für Massenspektrometrie", url:"https://tagung2027.dgms.eu/",
-   rel:"Medium", why:"General mass-spectrometry conference; prior editions included ICP-MS and environmental-analysis sessions", place:"Mannheim, Germany", dates:"2–5 March 2027", when:"2027-03-02", fmt:"",
-   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Official site marks dates and deadlines as preliminary.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"RAFA 2026 — 12th Recent Advances in Food Analysis", series:"UCT Prague & Wageningen Food Safety Research", url:"https://www.rafa2026.eu/",
-   rel:"Medium", why:"Dedicated tracks on micro/nanoplastics in food and environmental contaminants, within a broader food-analysis programme", place:"Prague, Czech Republic", dates:"3–6 November 2026", when:"2026-11-03", fmt:"",
-   tier:0, mile:"2026-09-30", mdate:"30 Sep 2026", mtype:"Last-minute poster abstracts", mnote:"Regular poster abstracts closed 31 Aug 2026; registration open.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"ICMGP 2026 — 17th International Conference on Mercury as a Global Pollutant", series:"ICMGP / Global Mercury Partnership", url:"https://icmgp2026india.com/",
-   rel:"Medium", why:"Trace-contaminant environmental chemistry with significant ICP-MS/speciation analytical content", place:"Hyderabad, India", dates:"4–9 October 2026", when:"2026-10-04", fmt:"",
-   tier:1, mile:"2026-10-04", mdate:"4 Oct 2026", mtype:"Event itself — no deadline left", mnote:"Late abstract submission window (16 Apr–30 Jun 2026) already closed.", status:"Dates now confirmed: 4–9 October 2026", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"2027 Chemical Separations Gordon Research Conference", series:"Gordon Research Conference", url:"https://www.grc.org/chemical-separations-conference/2027/",
-   rel:"Low", why:"General separations science; occasional environmental, PFAS and microplastics applications", place:"Holderness, NH, USA", dates:"11–16 July 2027", when:"2027-07-11", fmt:"",
-   tier:0, mile:"2027-06-13", mdate:"13 Jun 2027", mtype:"Application deadline", mnote:"GRC admits by application, not open registration; may close early if oversubscribed.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"2027 WQA Convention & Expo", series:"Water Quality Association", url:"https://wqa.org/events/2027-wqa-convention-expo/",
-   rel:"Medium", why:"Water treatment/quality industry conference with testing and analysis tracks", place:"Phoenix, AZ, USA", dates:"28–30 April 2027", when:"2027-04-28", fmt:"",
-   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"3rd Annual PFAS Summit Europe", series:"C5 Communications", url:"https://www.c5-online.com/pfas-europe/",
-   rel:"High", why:"PFAS is the whole subject", place:"Brussels, Belgium", dates:"May 2027 (exact days not yet published)", when:"2027-05-15", fmt:"",
-   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Official site still displays the prior (2026) edition's agenda; exact 2027 dates and deadlines not yet published. Distinct from the IQ International 'PFAS Treatment Europe' series also on this tracker.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"Water New Zealand Conference & Expo 2027", series:"Water New Zealand", url:"https://www.waternz.org.nz/Event?Action=View&Event_id=1757",
-   rel:"Medium", why:"Water utility conference; the series has previously run dedicated PFAS ('forever chemicals') sessions", place:"Auckland, New Zealand", dates:"15–17 September 2027", when:"2027-09-15", fmt:"",
-   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"Analitica Latin America 2027", series:"analiticanet.com.br", url:"https://home.analiticanet.com.br/",
-   rel:"Medium", why:"Major Latin American analytical/laboratory instrumentation congress and trade fair", place:"São Paulo, Brazil", dates:"28–30 September 2027", when:"2027-09-28", fmt:"",
-   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"IWRA 20th World Water Congress", series:"International Water Resources Association", url:"https://worldwatercongress.com/",
-   rel:"Medium", why:"Water quality is a substantial track within a broad water-resources congress", place:"Istanbul, Turkey", dates:"4–8 October 2027", when:"2027-10-04", fmt:"",
-   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Call for Abstracts page is live but no submission deadline could be confirmed yet.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"15th IWA International Conference on Water Reclamation and Reuse 2027", series:"International Water Association + Australian Water Association", url:"https://www.awa.asn.au/upcoming-events/water-reuse",
-   rel:"Medium", why:"Water reclamation and reuse quality is a core theme within a broad water-engineering programme", place:"Sydney, Australia", dates:"21–24 November 2027", when:"2027-11-21", fmt:"",
-   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Registrations expected to open May 2027; no submission deadline published yet.", status:"No change", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"Winter Conference on Plasma Spectrochemistry 2028", series:"International Atomic Spectrometry Association (IASA) — 25th edition", url:"https://iasa.world/winter-plasma-conference",
-   rel:"High", why:"Premier plasma/ICP-MS conference for trace elemental analysis used in environmental and water testing", place:"Hilton Head Island, SC, USA", dates:"7–13 January 2028", when:"2028-01-07", fmt:"",
-   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Biennial series (25th edition); call for abstracts not yet posted.", status:"New entry", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"analytica China 2026", series:"Messe München — analytica trade-fair network", url:"https://www.analyticachina.com.cn/en/",
-   rel:"Medium", why:"Major Asian analytical/lab-instrumentation trade fair spanning mass spectrometry and chromatography used across environmental testing labs", place:"Shanghai, China", dates:"16–18 November 2026", when:"2026-11-16", fmt:"",
-   tier:1, mile:"2026-11-16", mdate:"16 Nov 2026", mtype:"Event itself — no deadline left", mnote:"Trade fair with visitor registration open; no abstract/submission deadline applicable.", status:"New entry", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"WEFTEC 2027 (100th Annual Technical Exhibition & Conference)", series:"Water Environment Federation", url:"https://www.weftec.org/about-weftec/",
-   rel:"Medium", why:"Wastewater PFAS and micropollutant sessions", place:"Chicago, IL, USA", dates:"25–29 September 2027 (exhibition 27–29 Sep)", when:"2027-09-25", fmt:"",
-   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Centenary edition. Abstract deadline not yet published.", status:"New entry", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"SciX 2027", series:"Federation of Analytical Chemistry & Spectroscopy Societies", url:"https://scixconference.org/scix-future-conferences",
-   rel:"Medium", why:"Analytical instrumentation breadth", place:"Albuquerque, NM, USA", dates:"19–24 September 2027", when:"2027-09-19", fmt:"",
-   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"", status:"New entry", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"AOAC INTERNATIONAL 2027 Annual Meeting & Exposition", series:"AOAC INTERNATIONAL", url:"https://www.aoac.org/events/2027-aoac-international-annual-meeting-exposition/",
-   rel:"Medium", why:"Method-validation forum with PFAS and environmental-contaminant analytical method tracks", place:"Toronto, Canada", dates:"27 August – 1 September 2027", when:"2027-08-27", fmt:"",
-   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"", status:"New entry", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"Aquatech Amsterdam 2027", series:"RAI Amsterdam — biennial water-technology trade show", url:"https://www.aquatechtrade.com/amsterdam",
-   rel:"Medium", why:"Major water-technology trade show with an emerging-contaminants (PFAS) and water-quality treatment technical programme", place:"Amsterdam, Netherlands", dates:"9–12 March 2027", when:"2027-03-09", fmt:"",
-   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Visitor registration open; conference-track submission details not yet posted.", status:"New entry", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"2027 WateReuse Symposium", series:"WateReuse Association", url:"https://watereuse.org/news-events/conferences/2027-watereuse-symposium/",
-   rel:"Medium", why:"Water-recycling conference where PFAS and microplastics in reused water are a recurring track", place:"Las Vegas, NV, USA", dates:"1–4 March 2027", when:"2027-03-01", fmt:"",
-   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Awards for Excellence nominations due 29 Oct 2026 (not an abstract deadline); call for abstracts not yet posted.", status:"New entry", snote:"", vdate:"22 Sep 2026"},
-
-  {name:"IE expo Shanghai 2027", series:"Messe München Zhongmao — environmental technology trade fair", url:"https://www.ie-expo.com/",
-   rel:"Medium", why:"Asia's largest environmental-technology trade fair with a water-quality monitoring and treatment instrumentation presence", place:"Shanghai, China", dates:"20–22 April 2027", when:"2027-04-20", fmt:"",
-   tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"", status:"New entry", snote:"", vdate:"22 Sep 2026"}
+  {name:"RemTEC & Emerging Contaminants Summit", series:"BNP Media / Remediation Technology", url:"https://www.remediation-technology.com/remtecsummit/submit-abstract", rel:"High", why:"PFAS and emerging contaminants core", place:"Rosemont, IL, USA", dates:"13–15 April 2027", when:"2027-04-13", fmt:"", tier:0, mile:"2026-10-12", mdate:"12 Oct 2026", mtype:"Abstract submission (extended)", mnote:"Deadline extended from 21 Sep 2026 (shown as \"extended deadline\" on two official pages). No registration deadline stated.", status:"Deadline extended to 12 Oct 2026", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"AGU26 Annual Meeting", series:"American Geophysical Union", url:"https://www.agu.org/annual-meeting", rel:"Medium", why:"Water-quality, contaminant and microplastics sessions within a very large Earth-science programme", place:"San Francisco, CA, USA", dates:"7–11 December 2026", when:"2026-12-07", fmt:"", tier:0, mile:"2026-10-13", mdate:"13 Oct 2026", mtype:"Late-breaking abstract submission", mnote:"Early registration rate ends 5 Nov 2026; acceptance notices were due 1 Oct 2026.", status:"New entry", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"SETAC Europe 37th Annual Meeting", series:"Society of Environmental Toxicology and Chemistry", url:"https://www.setac.org/discover-events/global-meetings/setac-europe-37th-annual-meeting.html", rel:"High", why:"Environmental chemistry is the subject", place:"Geneva, Switzerland", dates:"25–29 April 2027", when:"2027-04-25", fmt:"", tier:0, mile:"2026-10-14", mdate:"14 Oct 2026", mtype:"Training-course proposals", mnote:"Abstract submission closes 10 Nov 2026; volunteer deadline 5 Nov; student grants 17 Nov 2026.", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"SETAC North America 47th Annual Meeting", series:"Society of Environmental Toxicology and Chemistry", url:"https://www.setac.org/discover-events/global-meetings/setac-north-america-47th-annual-meeting.html", rel:"High", why:"Environmental chemistry is the subject", place:"Montreal, Canada", dates:"2–5 November 2026", when:"2026-11-02", fmt:"Hybrid", tier:0, mile:"2026-10-14", mdate:"14 Oct 2026", mtype:"Late-breaking abstract submission", mnote:"US$50 fee, 5pm EDT. Housing and presenter-registration deadlines fall on the same day. Early-bird registration (16 Sep 2026) has passed.", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"Goldschmidt 2027", series:"Geochemical Society / European Association of Geochemistry", url:"https://conf.goldschmidt.info/goldschmidt/2027/", rel:"Medium", why:"Large geochemistry meeting with trace-element, contaminant and water-geochemistry sessions", place:"Paris, France", dates:"11–16 July 2027", when:"2027-07-11", fmt:"", tier:0, mile:"2026-10-15", mdate:"15 Oct 2026", mtype:"Session / workshop proposals", mnote:"Abstract submission reported as 25 Feb 2027 (stated on a third-party announcement page, not confirmed on the official site, which needs JavaScript).", status:"New entry", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"Pittcon 2027", series:"Pittsburgh Conference on Analytical Chemistry", url:"https://pittcon.org/conference/call-for-submissions/", rel:"Medium", why:"Dedicated Environmental & Energy track", place:"Pittsburgh, PA, USA", dates:"24–28 April 2027", when:"2027-04-24", fmt:"", tier:0, mile:"2026-10-15", mdate:"15 Oct 2026", mtype:"Poster abstract submission", mnote:"Undergraduate posters close 20 Nov 2026. Oral abstract deadline (28 Sep 2026) has passed.", status:"Oral deadline passed — posters next", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"IWA Leading Edge Technology Conference (21st LET)", series:"International Water Association", url:"https://iwa-let.org/", rel:"Medium", why:"Treatment technology for micropollutants", place:"Ghent, Belgium", dates:"24–28 May 2027", when:"2027-05-24", fmt:"", tier:0, mile:"2026-10-20", mdate:"20 Oct 2026", mtype:"Outline paper submission (max 2 pages)", mnote:"Notifications 15 Jan 2027; programme 12 Feb 2027; workshop proposals 2 Mar 2027.", status:"Deadline now announced: outline paper due 20 Oct 2026", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"AWWA Water Quality Technology Conference (WQTC26)", series:"American Water Works Association", url:"https://www.awwa.org/event/water-quality-technology/", rel:"High", why:"Drinking-water quality and CECs core", place:"Memphis, TN, USA", dates:"15–19 November 2026", when:"2026-11-15", fmt:"", tier:0, mile:"2026-10-23", mdate:"23 Oct 2026", mtype:"Early-bird registration", mnote:"Hotel block also closes 23 Oct 2026.", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"EMEC26 — 26th European Meeting on Environmental Chemistry", series:"Association of Chemistry and the Environment / Klaipėda University", url:"https://emec26.eu/", rel:"High", why:"Environmental chemistry is the subject, incl. monitoring, pollution sources and toxicology", place:"Klaipėda, Lithuania", dates:"24–27 November 2026", when:"2026-11-24", fmt:"", tier:0, mile:"2026-10-23", mdate:"23 Oct 2026", mtype:"Early registration", mnote:"Abstract deadline (30 Sep 2026) has just passed; the site does not say whether it was extended.", status:"New entry", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"Battelle Sediments Conference 2027", series:"Remediation & Management of Contaminated Sediments", url:"https://www.battelle.org/conferences/sediments-conference", rel:"Medium", why:"Substantial PFAS / emerging-contaminant track", place:"Austin, TX, USA", dates:"25–28 January 2027", when:"2027-01-25", fmt:"", tier:0, mile:"2026-11-13", mdate:"13 Nov 2026", mtype:"Early-bird registration", mnote:"Abstract submission closed 29 Jun 2026. Early-bird registration closes 13 Nov 2026 (75% refund less US$150 through same date; 50% refund 14 Nov–17 Dec; none from 18 Dec). Hotel block closes 8 Jan 2027.", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"Battelle BLOOM Conference 2027", series:"formerly the Bioremediation Symposium", url:"https://www.battelle.org/conferences/bloom-conference", rel:"Medium", why:"Remediation including emerging contaminants", place:"Austin, TX, USA", dates:"14–17 June 2027", when:"2027-06-14", fmt:"", tier:0, mile:"2026-11-16", mdate:"16 Nov 2026", mtype:"Abstract submission", mnote:"Formally rebranded from the Bioremediation Symposium to the BLOOM Conference (per a Battelle press release).", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"Ozwater'27", series:"Australian Water Association", url:"https://www.ozwater.org/program/call-for-papers/submission-guide", rel:"Medium", why:"Water quality within utility programme", place:"Sydney, Australia", dates:"4–6 May 2027", when:"2027-05-04", fmt:"", tier:0, mile:"2026-11-18", mdate:"18 Nov 2026", mtype:"Speaker acceptance due", mnote:"Abstract/paper call closed 18 Sep 2026. Later dates: presenter registration 5 Feb 2027; full paper 22 Feb 2027; poster artwork 29 Mar 2027; slides 27 Apr 2027.", status:"New milestone: speaker acceptance due 18 Nov 2026", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"EWCPS 2027 — 21st European Winter Conference on Plasma Spectrochemistry", series:"University of Crete / international scientific committee", url:"https://ewcps2027.gr/", rel:"High", why:"Plasma-based elemental/trace analysis (ICP-MS etc.) with an explicit environmental-science track", place:"Athens, Greece", dates:"7–12 February 2027", when:"2027-02-07", fmt:"", tier:0, mile:"2027-01-29", mdate:"29 Jan 2027", mtype:"Late registration deadline", mnote:"Abstract deadline (11 Sep 2026), author notification (22 Sep) and early-bird (30 Sep) have passed.", status:"Deadline passed — late registration next", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"ICCE 2027 — 18th Int. Conference on Chemistry and the Environment", series:"EuChemS Division of Chemistry and the Environment / Univ. of Gdańsk", url:"https://icce2027.com/", rel:"High", why:"Environmental chemistry is the subject; emerging pollutants, microplastics and analytical sciences are listed topics", place:"Gdańsk, Poland", dates:"6–10 June 2027", when:"2027-06-06", fmt:"", tier:0, mile:"2027-02-01", mdate:"1 Feb 2027", mtype:"Grant applications (open 15 Nov 2026)", mnote:"Abstract submission open 1 Oct 2026 – 15 Feb 2027; notification 1 Mar; early registration to 30 Mar; regular registration to 15 May 2027.", status:"New entry", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"ALGA & WasteMINZ 2027 Conference", series:"Australasian Land & Groundwater Association + WasteMINZ", url:"https://landandgroundwater.com/events/alga-and-wasteminz-joint-conference2027/", rel:"Medium", why:"Contaminated land/groundwater track with prominent PFAS content, within a broader waste & resource-recovery programme", place:"Hamilton, New Zealand", dates:"24–27 May 2027", when:"2027-05-24", fmt:"", tier:0, mile:"2027-02-11", mdate:"11 Feb 2027", mtype:"Abstract submission", mnote:"Abstract submission opens 26 Nov 2026, closes 11 Feb 2027. Super Saver registration to 8 Apr 2027; Early Bird 9 Apr–6 May; preliminary programme 25 Mar 2027.", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"AOMSC 2027", series:"11th Asia Oceania Mass Spectrometry Conference", url:"https://www.aomsc2027.org/conference-information/", rel:"Medium", why:"MS across fields; environmental sessions", place:"Taipei, Taiwan", dates:"28 June – 1 July 2027", when:"2027-06-28", fmt:"", tier:0, mile:"2027-02-15", mdate:"Mid-Feb 2027", mtype:"Abstract submission (est.)", mnote:"Call for abstracts opens early Dec 2026; the official site states the abstract deadline only as 'mid-February 2027', no exact day yet. Registration opens 6 Jan 2027; early-bird registration due 21 Apr 2027.", status:"No change", snote:"Official page confirms dates and venue (TICC, Taipei) but did not restate the mid-Feb abstract deadline this run.", vdate:"4 Oct 2026"},
+
+  {name:"CSF 2027 — Chemistry for a Sustainable Future", series:"International conference, Prague Congress Centre", url:"https://www.csf2027.com/", rel:"Medium", why:"Water remediation is one of eight parallel tracks in a broader sustainability-chemistry programme", place:"Prague, Czech Republic", dates:"15–19 September 2027", when:"2027-09-15", fmt:"", tier:0, mile:"2027-02-26", mdate:"26 Feb 2027", mtype:"Abstract submission (oral)", mnote:"Acceptance notifications 16 Apr 2027; poster abstracts 11 Jun 2027; early-bird registration 14 May 2027; presenter registration 30 Jul 2027; standard registration 27 Aug 2027.", status:"No change", snote:"Official site could not be fetched this run (robots/timeout); 26 Feb 2027 deadline not re-verified, no contradicting information found.", vdate:"10 Sep 2026"},
+
+  {name:"ISFC 2027 / ISoFT'27 — 25th International Symposium on Fluorine Chemistry", series:"Joint with fluorous-technologies symposium ISoFT", url:"https://isfc2027.com/", rel:"Low", why:"General fluorine chemistry; PFAS environmental fate is only an occasional topic", place:"Strasbourg, France", dates:"25–30 July 2027", when:"2027-07-25", fmt:"", tier:0, mile:"2027-03-30", mdate:"30 Mar 2027", mtype:"Abstract submission", mnote:"Abstract submission opened 1 Oct 2026, closes 30 Mar 2027. Early registration opens 20 Oct 2026 (tracker previously said 1 Oct); regular registration 1 May–18 Jun 2027.", status:"Call for abstracts now open", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"2027 Chemical Separations Gordon Research Conference", series:"Gordon Research Conference", url:"https://www.grc.org/chemical-separations-conference/2027/", rel:"Low", why:"General separations science; occasional environmental, PFAS and microplastics applications", place:"Holderness, NH, USA", dates:"11–16 July 2027", when:"2027-07-11", fmt:"", tier:0, mile:"2027-06-13", mdate:"13 Jun 2027", mtype:"Application deadline", mnote:"GRC admits by application, not open registration; may close early if oversubscribed. 13 Jun 2027 application deadline not re-shown on the page this run. Preliminary programme due by 14 Oct 2026 (information only).", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"GRC — Water Disinfection, Byproducts & Health", series:"Gordon Research Conference (+ GRS 31 Jul–1 Aug)", url:"https://www.grc.org/water-disinfection-byproducts-and-health-conference/2027/", rel:"High", why:"Water treatment chemistry core", place:"South Hadley, MA, USA", dates:"1–6 August 2027", when:"2027-08-01", fmt:"", tier:0, mile:"2027-07-04", mdate:"4 Jul 2027", mtype:"Application deadline", mnote:"GRC admits by application, not open registration; the seminar needs a separate application.", status:"Needs checking", snote:"Link returned 404 on two fetches this run (grc.org 2027 page); series landing page gave no usable content. Could not confirm the 4 Jul 2027 deadline. No replacement URL substituted.", vdate:"10 Sep 2026"},
+
+  {name:"ICMGP 2026 — 17th International Conference on Mercury as a Global Pollutant", series:"ICMGP / Global Mercury Partnership", url:"https://icmgp2026india.com/", rel:"Medium", why:"Trace-contaminant environmental chemistry with significant ICP-MS/speciation analytical content", place:"Hyderabad, India", dates:"4–9 October 2026", when:"2026-10-04", fmt:"", tier:1, mile:"2026-10-04", mdate:"4 Oct 2026", mtype:"Event itself — no deadline left", mnote:"Late abstract window (16 Apr–30 Jun 2026) closed. Event under way (IIT Hyderabad).", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"ISES 2026 Annual Meeting", series:"International Society of Exposure Science", url:"https://www.intlexposurescience.org/ises-2026-annual-meeting/", rel:"Medium", why:"Exposure science; PFAS and analysis sessions", place:"Vancouver, Canada", dates:"4–8 October 2026", when:"2026-10-04", fmt:"", tier:1, mile:"2026-10-04", mdate:"4 Oct 2026", mtype:"Event itself — closing date unpublished", mnote:"Regular abstracts closed; a late-breaking window opened in early August 2026 and remains open-ended with no stated closing date.", status:"No change", snote:"Late-breaking deadline still not published on the official page.", vdate:"4 Oct 2026"},
+
+  {name:"IWA World Water Congress & Exhibition 2026", series:"International Water Association", url:"https://worldwatercongress.org/", rel:"Medium", why:"Water quality within a broad programme", place:"Glasgow, UK", dates:"4–8 October 2026", when:"2026-10-04", fmt:"", tier:1, mile:"2026-10-04", mdate:"4 Oct 2026", mtype:"Event itself — no deadline left", mnote:"Next editions: Kuching, Malaysia (2028) and São Paulo, Brazil (2030); dates unannounced.", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"SciX 2026", series:"Federation of Analytical Chemistry & Spectroscopy Societies", url:"https://scixconference.org/", rel:"Medium", why:"Analytical instrumentation breadth", place:"Sparks / Reno, NV, USA", dates:"4–9 October 2026", when:"2026-10-04", fmt:"", tier:1, mile:"2026-10-04", mdate:"4 Oct 2026", mtype:"Event itself — no deadline left", mnote:"Late-breaking submissions closed 26 Jun 2026. Official home page lists no dates; dates confirmed via third-party listings.", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"Great Lakes Microplastics Summit 2026", series:"Michigan Dept. of Environment, Great Lakes, and Energy (EGLE)", url:"https://www.michigan.gov/egle/outreach/conferences/great-lakes-microplastics", rel:"High", why:"Microplastics is the whole subject", place:"Virtual", dates:"7–8 October 2026", when:"2026-10-07", fmt:"Virtual", tier:1, mile:"2026-10-07", mdate:"7 Oct 2026", mtype:"Event itself — no deadline left", mnote:"Registration is free and open; no separate abstract deadline published.", status:"Dates corrected to 7–8 Oct 2026", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"MICRO 2026 — Plastic Pollution from MACRO to nano", series:"MICRO international conference series", url:"https://micro2026.sciencesconf.org/", rel:"High", why:"Microplastics is the whole subject", place:"Cádiz, Spain", dates:"12–16 October 2026", when:"2026-10-12", fmt:"", tier:1, mile:"2026-10-12", mdate:"12 Oct 2026", mtype:"Event itself — no deadline left", mnote:"Final abstract-detail deadline (16 Sep 2026) has passed; registration closed. Final programme was due ~1 Oct 2026.", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"AEHS Foundation East Coast Conference — Soils, Sediments, Water & Energy (42nd)", series:"Association for Environmental Health and Sciences Foundation", url:"https://www.aehsfoundation.org/eastcoast", rel:"High", why:"PFAS and contaminated-site remediation core", place:"Amherst, MA, USA", dates:"19–22 October 2026", when:"2026-10-19", fmt:"", tier:1, mile:"2026-10-19", mdate:"19 Oct 2026", mtype:"Event itself — rolling call for abstracts", mnote:"Call for abstracts listed with no fixed closing date. Early registration closed 1 Oct 2026.", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"31st Florida Remediation Conference", series:"Florida Remediation Conference", url:"https://floridaremediationconference.org/", rel:"Medium", why:"Remediation conference naming emerging contaminants such as PFAS as a key focus", place:"Orlando, FL, USA", dates:"25–27 October 2026", when:"2026-10-25", fmt:"", tier:1, mile:"2026-10-25", mdate:"25 Oct 2026", mtype:"Event itself — no deadline left", mnote:"No call for abstracts on the site; hotel block ended 25 Sep 2026. Separate from the 2027 PFAS Forum VII & 32nd FRC listed here.", status:"New entry", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"PFAS Treatment USA 2026", series:"IQ International / Water Infra IQ Hub (3rd annual)", url:"https://www.pfas-summit.com/", rel:"High", why:"PFAS treatment in drinking water and wastewater is the whole subject", place:"Anaheim, CA, USA", dates:"28–29 October 2026", when:"2026-10-28", fmt:"", tier:1, mile:"2026-10-28", mdate:"28 Oct 2026", mtype:"Event itself — no deadline left", mnote:"No submission deadlines published.", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"SGMS 2026 — 43rd Meeting of the Swiss Group for Mass Spectrometry", series:"Swiss Group for Mass Spectrometry", url:"https://www.sgms.ch/sgms/ms-meetings-new/2026-sgms-meeting.php", rel:"Medium", why:"Mass-spectrometry meeting with an environmental-contaminant (PFAS, halocarbons) topic among its themes", place:"Beatenberg, Switzerland", dates:"29–30 October 2026", when:"2026-10-29", fmt:"", tier:1, mile:"2026-10-29", mdate:"29 Oct 2026", mtype:"Event itself — no deadline left", mnote:"Abstracts closed 7 Sep 2026; registration extended to 12 Sep 2026. Official page says Beatenberg 29–30 Oct (one third-party list says Interlaken 28–30 Oct).", status:"New entry", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"RAFA 2026 — 12th Recent Advances in Food Analysis", series:"UCT Prague & Wageningen Food Safety Research", url:"https://www.rafa2026.eu/", rel:"Medium", why:"Dedicated tracks on micro/nanoplastics in food and environmental contaminants, within a broader food-analysis programme", place:"Prague, Czech Republic", dates:"3–6 November 2026", when:"2026-11-03", fmt:"", tier:1, mile:"2026-11-03", mdate:"3 Nov 2026", mtype:"Event itself — no deadline left", mnote:"Poster abstract deadline (30 Sep 2026) has passed; late registration open from 1 Oct with no end date stated. Registration desk opens 2 Nov.", status:"Deadline passed — event only", snote:"Official home page still mentions \"very last minute\" poster submissions; deadlines page says 30 Sep.", vdate:"4 Oct 2026"},
+
+  {name:"7th ICRAPHE / 22nd HRMS & LC-MS/MS Workshop", series:"Pharmaceuticals in the environment · environmental HRMS", url:"https://icraphe-hrms.activacongresos.com/important-dates/", rel:"High", why:"Environmental HRMS is the subject", place:"Barcelona, Spain", dates:"9–11 November 2026", when:"2026-11-09", fmt:"", tier:1, mile:"2026-11-09", mdate:"9 Nov 2026", mtype:"Event itself — no deadline left", mnote:"Last-minute poster abstracts closed 2 Oct 2026; main abstracts closed 24 Jul 2026. No registration closing date found.", status:"Deadline passed — event only", snote:"Official activacongresos pages are blocked to automated fetch (robots.txt) — not confirmed dead. Dates corroborated via the third-party programme PDF (seqa.es); not re-verified at source this run.", vdate:"22 Sep 2026"},
+
+  {name:"analytica China 2026", series:"Messe München — analytica trade-fair network", url:"https://www.analyticachina.com.cn/en/", rel:"Medium", why:"Major Asian analytical/lab-instrumentation trade fair spanning mass spectrometry and chromatography used across environmental testing labs", place:"Shanghai, China", dates:"16–18 November 2026", when:"2026-11-16", fmt:"", tier:1, mile:"2026-11-16", mdate:"16 Nov 2026", mtype:"Event itself — no deadline left", mnote:"Trade fair with visitor registration open; no abstract/submission deadline applicable.", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"Eastern Analytical Symposium 2026", series:"EAS & Exposition", url:"https://eas.org/", rel:"Low", why:"General analytical; some environmental work", place:"Plainsboro, NJ, USA", dates:"16–18 November 2026", when:"2026-11-16", fmt:"", tier:1, mile:"2026-11-16", mdate:"16 Nov 2026", mtype:"Event itself — no deadline left", mnote:"Attendee registration open; call for papers closed.", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"Great Lakes PFAS Summit 2026", series:"Michigan EGLE (+ PFAS Treatment Technology Symposium 9–10 Dec)", url:"https://www.michigan.gov/egle/outreach/conferences/pfas-summit", rel:"High", why:"PFAS is the whole subject", place:"Virtual", dates:"1–3 December 2026", when:"2026-12-01", fmt:"Virtual", tier:1, mile:"2026-12-01", mdate:"1 Dec 2026", mtype:"Event itself — no deadline left", mnote:"Presentation proposals closed 28 Jun 2026; registration opened 1 Oct 2026, no closing date stated.", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"AEHS Foundation West Coast Conference — Soil, Water, Energy & Air (36th)", series:"Association for Environmental Health and Sciences Foundation", url:"https://www.aehsfoundation.org/westcoast", rel:"High", why:"PFAS and contaminated-site remediation core", place:"San Diego, CA, USA", dates:"15–18 March 2027", when:"2027-03-15", fmt:"", tier:1, mile:"2027-03-15", mdate:"15 Mar 2027", mtype:"Event itself — no deadline left", mnote:"Abstract submission deadline was 17 Jul 2026 (already closed).", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"PFAS Treatment Canada 2027", series:"IQ International / Water Infra IQ Hub (2nd annual)", url:"https://www.canada.pfas-summit.com/", rel:"High", why:"PFAS removal, destruction and site remediation is the whole subject", place:"Toronto, Canada", dates:"15–16 March 2027", when:"2027-03-15", fmt:"", tier:1, mile:"2027-03-15", mdate:"15 Mar 2027", mtype:"Event itself — no deadline left", mnote:"Call for presentations is listed but no deadline is given; registration open with no cutoff.", status:"New entry", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"ACS Spring 2027", series:"American Chemical Society national meeting", url:"https://callforabstracts.acs.org/acsspring2027", rel:"Medium", why:"ENVR and ANYL division sessions", place:"New Orleans, LA, USA", dates:"21–25 March 2027", when:"2027-03-21", fmt:"Hybrid", tier:1, mile:"2027-03-21", mdate:"21 Mar 2027", mtype:"Event itself — no deadline left", mnote:"28 Sep 2026 abstract deadline has closed; no extension or late-breaking round listed. The call page does not restate meeting dates/city (21–25 Mar, New Orleans), which were last confirmed via the ACS Environmental Chemistry Division.", status:"Deadline passed — event only", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"Membrane Technology Conference (MTC27)", series:"AMTA / AWWA", url:"https://www.amtaorg.com/event/membrane-technology-conference-2027/", rel:"Medium", why:"Membrane removal of PFAS and CECs", place:"Denver, CO, USA", dates:"22–25 March 2027", when:"2027-03-22", fmt:"", tier:1, mile:"2027-03-22", mdate:"22 Mar 2027", mtype:"Event itself — no deadline left", mnote:"Call for abstracts closed 6 Aug 2026 (extended from 23 Jul); notifications expected late Oct 2026. The event page itself lists no abstract or registration deadlines. AWWA's generic call-for-abstracts listing shows a conflicting 8 Jul 2027 date, judged a stale template entry.", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"PFAS Treatment Australia 2027", series:"IQ International (3rd annual)", url:"https://www.australia.pfas-summit.com/", rel:"High", why:"PFAS treatment and remediation for water utilities is the whole subject", place:"Melbourne, Australia", dates:"24–25 March 2027", when:"2027-03-24", fmt:"", tier:1, mile:"2027-03-24", mdate:"24 Mar 2027", mtype:"Event itself — no deadline left", mnote:"No submission deadlines published.", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"PFAS Treatment Europe 2027", series:"IQ International / Water Infra IQ Hub (5th annual)", url:"https://www.europe.pfas-summit.com/", rel:"High", why:"PFAS removal and EU compliance for water utilities is the whole subject", place:"Amsterdam, Netherlands", dates:"12–13 April 2027", when:"2027-04-12", fmt:"", tier:1, mile:"2027-04-12", mdate:"12 Apr 2027", mtype:"Event itself — no deadline left", mnote:"No submission deadlines published.", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"2027 WQA Convention & Expo", series:"Water Quality Association", url:"https://wqa.org/events/2027-wqa-convention-expo/", rel:"Medium", why:"Water treatment/quality industry conference with testing and analysis tracks", place:"Phoenix, AZ, USA", dates:"28–30 April 2027", when:"2027-04-28", fmt:"", tier:1, mile:"2027-04-28", mdate:"28 Apr 2027", mtype:"Event itself — no deadline left", mnote:"Presentation proposals closed 8 Sep 2026; acceptance notifications due November 2026. No registration dates posted.", status:"Deadline passed — event only", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"PFAS Remediation Xchange USA 2027", series:"Thought Xchange Network", url:"https://us.pfasxchange.com/", rel:"High", why:"PFAS remediation technology deployment is the whole subject", place:"Los Angeles, CA, USA", dates:"12 May 2027", when:"2027-05-12", fmt:"", tier:1, mile:"2027-05-12", mdate:"12 May 2027", mtype:"Event itself — no deadline left", mnote:"'Super early bird' pricing currently active; no stated end date.", status:"No change", snote:"Official site blocks automated fetches (robots.txt); could not re-verify this run — no evidence of cancellation or date change.", vdate:"22 Sep 2026"},
+
+  {name:"AWWA Annual Conference & Exposition (ACE27)", series:"American Water Works Association", url:"https://ace.awwa.org/", rel:"Medium", why:"Water-quality track among utility topics", place:"San Diego, CA, USA", dates:"13–16 June 2027", when:"2027-06-13", fmt:"", tier:1, mile:"2027-06-13", mdate:"13 Jun 2027", mtype:"Event itself — no deadline left", mnote:"Abstract call closed 24 Sep 2026 (after extension from 10 Sep). Acceptance notices expected Feb 2027; no registration or housing deadline posted yet.", status:"Deadline passed — event only", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"PFAS Forum VII & 32nd Florida Remediation Conference", series:"PFAS Forum", url:"https://pfasforum.org/", rel:"High", why:"PFAS is an explicit focus alongside general remediation", place:"Orlando, FL, USA", dates:"27–29 October 2027", when:"2027-10-27", fmt:"Hybrid", tier:1, mile:"2027-10-27", mdate:"27 Oct 2027", mtype:"Event itself — rolling call for abstracts", mnote:"Call for abstracts open via online form; no fixed closing date published.", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"2027 WateReuse Symposium", series:"WateReuse Association", url:"https://watereuse.org/news-events/conferences/2027-watereuse-symposium/", rel:"Medium", why:"Water-recycling conference where PFAS and microplastics in reused water are a recurring track", place:"Las Vegas, NV, USA", dates:"1–4 March 2027", when:"2027-03-01", fmt:"", tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Awards for Excellence nominations due 29 Oct 2026 (not an abstract deadline; page wording unclear). Hotel booking opens 6 Oct 2026. Call for abstracts not yet posted.", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"DGMS 2027 — 58th Annual Conference of the German Society for Mass Spectrometry", series:"Deutsche Gesellschaft für Massenspektrometrie", url:"https://tagung2027.dgms.eu/", rel:"Medium", why:"General mass-spectrometry conference; prior editions included ICP-MS and environmental-analysis sessions", place:"Mannheim, Germany", dates:"2–5 March 2027", when:"2027-03-02", fmt:"", tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Official site marks dates and deadlines as preliminary.", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"Aquatech Amsterdam 2027", series:"RAI Amsterdam — biennial water-technology trade show", url:"https://www.aquatechtrade.com/amsterdam", rel:"Medium", why:"Major water-technology trade show with an emerging-contaminants (PFAS) and water-quality treatment technical programme", place:"Amsterdam, Netherlands", dates:"9–12 March 2027", when:"2027-03-09", fmt:"", tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Visitor registration open; conference-track submission details not yet posted.", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"ANAKON 2027", series:"GDCh Division of Analytical Chemistry", url:"https://www.gdch.de/veranstaltungen/tagungen/gdch-tagungen-2027.html", rel:"Medium", why:"Biennial German-language analytical chemistry conference", place:"Mainz, Germany", dates:"5–8 April 2027", when:"2027-04-05", fmt:"", tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"No dedicated conference site found; link is the GDCh 2027 conference listing.", status:"New entry", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"Emerging Contaminants in the Environment Conference (ECEC27)", series:"Illinois Sustainable Technology Center / IISG", url:"https://publish.illinois.edu/emerging-contaminants-conference/", rel:"High", why:"Emerging contaminants are the subject", place:"Virtual", dates:"20–21 April 2027", when:"2027-04-20", fmt:"Virtual", tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Series runs fully virtual in odd years (2027, 2029, 2031…) and in person (Champaign, IL) in even years. Abstract and registration details not yet posted.", status:"No change", snote:"Official page showed no 2027 dates this run; 20–21 Apr date not re-confirmed.", vdate:"22 Sep 2026"},
+
+  {name:"IE expo Shanghai 2027", series:"Messe München Zhongmao — environmental technology trade fair", url:"https://www.ie-expo.com/", rel:"Medium", why:"Asia's largest environmental-technology trade fair with a water-quality monitoring and treatment instrumentation presence", place:"Shanghai, China", dates:"20–22 April 2027", when:"2027-04-20", fmt:"", tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"3rd Annual PFAS Summit Europe", series:"C5 Communications", url:"https://www.c5-online.com/pfas-europe/", rel:"High", why:"PFAS is the whole subject", place:"Brussels, Belgium", dates:"May 2027 (exact days not yet published)", when:"2027-05-15", fmt:"", tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Call for speakers is now linked and registration open, but no exact 2027 dates or deadlines are posted; the about page still shows the 2026 edition. Distinct from the IQ International \"PFAS Treatment Europe\" series.", status:"Call for speakers now open (no deadline)", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"Norwegian Environmental Chemistry Symposium (NECS) 2027", series:"Norwegian Chemical Society — Division for Analytical Chemistry", url:"https://www.envirochem.no/", rel:"High", why:"Environmental chemistry is the whole subject", place:"Sommarøy (Tromsø), Norway", dates:"23–26 May 2027", when:"2027-05-23", fmt:"", tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Site last updated Mar 2026; deadlines not yet posted.", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"WaterMicro 2027", series:"International Water Association", url:"https://www.watermicro2027.com/", rel:"Medium", why:"Water safety/microbial quality is the core theme; chemical contaminants such as PFAS are an adjacent track", place:"San José, Costa Rica", dates:"30 May – 3 June 2027", when:"2027-05-30", fmt:"", tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"'Important dates' section on the official site is not yet populated (dedicated /abstracts page currently 404s).", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"ASMS 2027 — 75th Conference on Mass Spectrometry", series:"American Society for Mass Spectrometry", url:"https://www.asms.org/conferences/annual-conference/future-annual-conferences", rel:"Medium", why:"Environmental MS sessions within a huge programme", place:"Houston, TX, USA", dates:"6–10 June 2027", when:"2027-06-06", fmt:"", tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"For scale: the 2026 abstract deadline was 6 Feb 2026; the 2027 date is not published.", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"HPLC 2027", series:"56th Int. Symposium on High Performance Liquid Phase Separations", url:"https://www.hplc2027.com/", rel:"Medium", why:"Environmental separations is a listed topic", place:"Innsbruck, Austria", dates:"20–24 June 2027", when:"2027-06-20", fmt:"", tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Abstract and registration portal opens by the end of 2026.", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"Environmental Measurement Symposium 2027 (NEMC)", series:"National Environmental Monitoring Conference", url:"https://envirosymposium.group/", rel:"High", why:"Environmental measurement methods core", place:"Chicago, IL, USA", dates:"2–6 August 2027", when:"2027-08-02", fmt:"", tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"For scale: the 2026 abstract deadline was 6 Feb 2026.", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"ACS Fall 2027", series:"American Chemical Society national meeting", url:"https://acsenvr.com/events/", rel:"Medium", why:"ENVR and ANYL division sessions", place:"San Diego, CA, USA", dates:"22–26 August 2027", when:"2027-08-22", fmt:"Hybrid", tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"ACS calls for abstracts typically open about six months ahead; callforabstracts.acs.org/acsfall2027 is not yet live.", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"SETAC Asia-Pacific 16th Meeting", series:"Society of Environmental Toxicology and Chemistry", url:"https://www.setac.org/discover-events/ems-event-calendar/setac-asia-pacific-16th-meeting.html", rel:"High", why:"Environmental chemistry is the subject", place:"Coffs Harbour, NSW, Australia", dates:"23–27 August 2027", when:"2027-08-23", fmt:"", tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Booking not yet open. SETAC Asia-Pacific moves to annual meetings from 2027.", status:"New entry", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"AOAC INTERNATIONAL 2027 Annual Meeting & Exposition", series:"AOAC INTERNATIONAL", url:"https://www.aoac.org/events/2027-aoac-international-annual-meeting-exposition/", rel:"Medium", why:"Method-validation forum with PFAS and environmental-contaminant analytical method tracks", place:"Toronto, Canada", dates:"27 August – 1 September 2027", when:"2027-08-27", fmt:"", tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"EuroAnalysis 2027 (XXIII EuroAnalysis)", series:"Croatian Chemical Society, for EuChemS Division of Analytical Chemistry", url:"https://euroanalysis2027.hkd.hr/", rel:"High", why:"Flagship pan-European analytical chemistry congress, with environmental analysis a major theme", place:"Dubrovnik, Croatia", dates:"5–9 September 2027", when:"2027-09-05", fmt:"", tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Official site states further details are 'coming soon.'", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"SETAC Latin America 17th Biennial Meeting", series:"Society of Environmental Toxicology and Chemistry", url:"https://www.setac.org/discover-events/global-meetings.html", rel:"High", why:"Environmental chemistry is the subject", place:"Medellín, Colombia", dates:"14–17 September 2027", when:"2027-09-14", fmt:"", tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"Water New Zealand Conference & Expo 2027", series:"Water New Zealand", url:"https://www.waternz.org.nz/Event?Action=View&Event_id=1757", rel:"Medium", why:"Water utility conference; the series has previously run dedicated PFAS ('forever chemicals') sessions", place:"Auckland, New Zealand", dates:"15–17 September 2027", when:"2027-09-15", fmt:"", tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Official event page lists 13–17 Sep 2027 (NZICC Auckland) against 15–17 Sep here — the extra days may be pre-events. No deadlines posted.", status:"Needs checking", snote:"Conference dates differ between sources; unresolved.", vdate:"4 Oct 2026"},
+
+  {name:"SciX 2027", series:"Federation of Analytical Chemistry & Spectroscopy Societies", url:"https://scixconference.org/scix-future-conferences", rel:"Medium", why:"Analytical instrumentation breadth", place:"Albuquerque, NM, USA", dates:"19–24 September 2027", when:"2027-09-19", fmt:"", tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"WEFTEC 2027 (100th Annual Technical Exhibition & Conference)", series:"Water Environment Federation", url:"https://www.weftec.org/about-weftec/", rel:"Medium", why:"Wastewater PFAS and micropollutant sessions", place:"Chicago, IL, USA", dates:"25–29 September 2027 (exhibition 27–29 Sep)", when:"2027-09-25", fmt:"", tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Centenary edition. Abstract portal due to open October 2026 (exact day not given); closing date not published.", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"MSACL 2027", series:"Mass Spectrometry & Advances in the Clinical Lab", url:"https://www.msacl.org/index.php?header=Events&tab=Future&subtab=MSACL_2027", rel:"Low", why:"Clinical mass spectrometry; only adjacent to environmental work", place:"Montreal, Canada", dates:"26 September – 1 October 2027", when:"2027-09-26", fmt:"", tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"", status:"New entry", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"SETAC Africa 13th Biennial Meeting", series:"Society of Environmental Toxicology and Chemistry", url:"https://www.setac.org/discover-events/global-meetings.html", rel:"High", why:"Environmental chemistry is the subject", place:"Dar es Salaam, Tanzania", dates:"26–30 September 2027", when:"2027-09-26", fmt:"", tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"Analitica Latin America 2027", series:"analiticanet.com.br", url:"https://home.analiticanet.com.br/", rel:"Medium", why:"Major Latin American analytical/laboratory instrumentation congress and trade fair", place:"São Paulo, Brazil", dates:"28–30 September 2027", when:"2027-09-28", fmt:"", tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"IWRA 20th World Water Congress", series:"International Water Resources Association", url:"https://worldwatercongress.com/", rel:"Medium", why:"Water quality is a substantial track within a broad water-resources congress", place:"Istanbul, Turkey", dates:"4–8 October 2027", when:"2027-10-04", fmt:"", tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Call for Abstracts page is live but no submission deadline could be confirmed yet.", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"ICNTS 27 — Int. Conference on Non-Target Screening", series:"AFIN-TS", url:"https://afin-ts.de/icnts27/", rel:"High", why:"Non-target environmental screening core", place:"Erding, Germany", dates:"18–21 October 2027", when:"2027-10-18", fmt:"Hybrid", tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Registration details expected winter 2026. Attend in person or online; recordings run to end-2027.", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"SETAC North America 48th Annual Meeting", series:"Society of Environmental Toxicology and Chemistry", url:"https://www.setac.org/discover-events/ems-event-calendar/setac-north-america-48th-annual-meeting.html", rel:"High", why:"Environmental chemistry is the subject", place:"Long Beach, CA, USA", dates:"31 October – 4 November 2027", when:"2027-10-31", fmt:"", tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Booking not yet open; no abstract or registration deadlines posted.", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"ecoforum 2027", series:"Australasian Land & Groundwater Association", url:"https://landandgroundwater.com/events/ecoforum-2027/", rel:"Medium", why:"Contaminated land/groundwater industry event with strong PFAS presence, within a broader environmental scope", place:"Sydney, Australia", dates:"9–11 November 2027", when:"2027-11-09", fmt:"", tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Organisers state details will be released late 2026.", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"15th IWA International Conference on Water Reclamation and Reuse 2027", series:"International Water Association + Australian Water Association", url:"https://www.awa.asn.au/upcoming-events/water-reuse", rel:"Medium", why:"Water reclamation and reuse quality is a core theme within a broad water-engineering programme", place:"Sydney, Australia", dates:"21–25 November 2027", when:"2027-11-21", fmt:"", tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Call for abstracts now open on the AWA page but no closing date found. Venue ICC Sydney. Sources disagree on dates (AWA: 21–25 Nov; third party: 22–24 Nov).", status:"Needs checking", snote:"Abstract call open; deadline and exact dates unconfirmed.", vdate:"4 Oct 2026"},
+
+  {name:"ISEAC-42", series:"IAEAC — now titled \"42nd Int. Conference on Environmental & Food Monitoring\"", url:"https://iaeac.com/iseac-42/", rel:"High", why:"Environmental analytical chemistry core", place:"VU Amsterdam, Amsterdam, Netherlands", dates:"30 November – 3 December 2027", when:"2027-11-30", fmt:"", tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Official page marks important dates 'coming soon'.", status:"Venue detail added (VU Amsterdam)", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"AGU27 Annual Meeting", series:"American Geophysical Union", url:"https://www.agu.org/meetings", rel:"Medium", why:"Water-quality, contaminant and microplastics sessions within a very large Earth-science programme", place:"Washington, DC, USA", dates:"13–17 December 2027", when:"2027-12-13", fmt:"", tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"", status:"New entry", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"Winter Conference on Plasma Spectrochemistry 2028", series:"International Atomic Spectrometry Association (IASA) — 25th edition", url:"https://iasa.world/winter-plasma-conference", rel:"High", why:"Premier plasma/ICP-MS conference for trace elemental analysis used in environmental and water testing", place:"Hilton Head Island, SC, USA", dates:"7–13 January 2028", when:"2028-01-07", fmt:"", tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"Biennial series (25th edition); call for abstracts not yet posted. Dates confirmed by Spectroscopy Online; IASA page still shows the 2026 edition.", status:"No change", snote:"", vdate:"4 Oct 2026"},
+
+  {name:"Ocean Sciences Meeting 2028 (OSM28)", series:"AGU / ASLO / TOS", url:"https://www.agu.org/ocean-sciences-meeting", rel:"Medium", why:"Marine pollution and microplastics sessions within an ocean-science programme", place:"Vancouver, Canada", dates:"27 February – 3 March 2028", when:"2028-02-27", fmt:"", tier:2, mile:"", mdate:"Not yet announced", mtype:"", mnote:"No session-proposal or abstract dates posted yet.", status:"New entry", snote:"", vdate:"4 Oct 2026"}
 ];
 
 // Region follows the physical location, so hybrid meetings sit in their host region.
@@ -626,7 +501,7 @@ const REGION_BY_COUNTRY = {
   "UK":"Europe", "Spain":"Europe", "Switzerland":"Europe", "Italy":"Europe",
   "Belgium":"Europe", "Austria":"Europe", "Germany":"Europe", "Netherlands":"Europe",
   "Norway":"Europe", "Croatia":"Europe", "Greece":"Europe", "Czech Republic":"Europe", "France":"Europe",
-  "Turkey":"Europe",
+  "Turkey":"Europe", "Poland":"Europe", "Lithuania":"Europe",
   "Tanzania":"Africa",
   "Japan":"APAC", "Taiwan":"APAC", "India":"APAC", "China":"APAC",
   "Australia":"Australia", "New Zealand":"Australia",
@@ -745,6 +620,5 @@ document.getElementById("q").addEventListener("input", e => {
 
 render();
 </script>
-
 </body>
 </html>
